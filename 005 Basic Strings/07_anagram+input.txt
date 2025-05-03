@@ -1,0 +1,7 @@
+3
+
+anagram nagaram
+
+dog cat
+
+eat tea
