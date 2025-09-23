@@ -1,14 +1,14 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <utility>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
 public:
-  void rotateMatrix(vector<vector<int>> &matrix) {
+  void rotateMatrix(vector<vector<int>>& matrix) {
     // Use transpose for 90° clockwise rotation.
     for (int i = 0; i < matrix.size(); ++i) {
       for (int j = 0; j < i; ++j) {
@@ -33,17 +33,17 @@ void solve(input_type input) {
 
 void printArray(vector<vector<item_type>> matrix) {
   cout << "[";
-  for (const auto &arr : matrix) {
+  for (const auto& arr : matrix) {
     cout << "[";
-    for (const auto &item : arr) {
+    for (const auto& item : arr) {
       cout << item << ", ";
     }
     cout << "]";
   }
-  cout << "]" << endl;
+  cout << "]" << "\n";
 }
 
-vector<item_type> parseArray(stringstream &ss) {
+vector<item_type> parseArray(stringstream& ss) {
   char ch;
   vector<item_type> input_array;
   item_type item;
@@ -62,7 +62,7 @@ vector<item_type> parseArray(stringstream &ss) {
   return input_array;
 }
 
-vector<vector<item_type>> parse2DArray(stringstream &ss) {
+vector<vector<item_type>> parse2DArray(stringstream& ss) {
   char ch;
   vector<vector<item_type>> input_array;
   while (ss >> ch) {

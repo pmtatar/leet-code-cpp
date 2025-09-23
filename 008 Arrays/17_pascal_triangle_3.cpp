@@ -1,9 +1,9 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <utility>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -50,16 +50,16 @@ void printArray2D(vector<vector<item_type>> arr) {
     printArray(arr[i]);
     cout << "], ";
   }
-  cout << "]" << endl;
+  cout << "]" << "\n";
 }
 
 void printArray(vector<item_type> arr) {
-  for (const auto &item : arr) {
+  for (const auto& item : arr) {
     cout << item << " ";
   }
 }
 
-vector<item_type> parseArray(stringstream &ss) {
+vector<item_type> parseArray(stringstream& ss) {
   char ch;
   vector<item_type> input_array;
   item_type item;
@@ -78,7 +78,7 @@ vector<item_type> parseArray(stringstream &ss) {
   return input_array;
 }
 
-vector<vector<item_type>> parse2DArray(stringstream &ss) {
+vector<vector<item_type>> parse2DArray(stringstream& ss) {
   char ch;
   vector<vector<item_type>> input_array;
   while (ss >> ch) {

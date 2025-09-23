@@ -1,69 +1,71 @@
+#include <cstddef>
 #include <iostream>
-#include <vector>
-#include <string>
 #include <sstream>
+#include <string>
 #include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
 public:
-    int linearSearch(vector<int>& nums, int target) {
-        for (int i = 0; i < nums.size(); ++i) {
-            if (nums[i] == target) {
-                return i;
-            }
-        }
-        return -1;
+  auto linearSearch(vector<int>& nums, int target) -> int {
+    for (size_t i = 0; i < nums.size(); ++i) {
+      if (nums[i] == target) {
+        return (int)i;
+      }
     }
+    return -1;
+  }
 };
 
-typedef int item_type;
-typedef pair<vector<item_type>, int> input_type;
+using item_type = int;
+const item_type DEFAULT_ITEM_TYPE = 0;
 
-void solve(input_type input) {
-    Solution s;
-    cout << s.linearSearch(input.first, input.second) << endl;
+using input_type = pair<vector<item_type>, int>;
+
+auto solve(input_type input) {
+  Solution s;
+  cout << s.linearSearch(input.first, input.second) << "\n";
 }
 
-input_type readNextInput() {
-    item_type target;
-    cin >> target;
+auto readNextInput() -> input_type {
+  item_type target = DEFAULT_ITEM_TYPE;
+  cin >> target;
 
-    string line;
-    while (line.empty()) {
-        getline(cin, line);
-    }
+  string line;
+  while (line.empty()) {
+    getline(cin, line);
+  }
 
-    stringstream ss(line);
-    item_type item;
-    vector<item_type> input_array;
-    while (ss >> item) {
-        input_array.push_back(item);
-    }
+  stringstream ss(line);
+  item_type item = DEFAULT_ITEM_TYPE;
+  vector<item_type> inpurtArray = {};
+  while (ss >> item) {
+    inpurtArray.push_back(item);
+  }
 
-    return {input_array, target};
+  return {inpurtArray, target};
 }
 
 int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
+  ios_base::sync_with_stdio(0);
+  cin.tie(0);
+  cout.tie(0);
 
-    // Count of inputs.
-    int t;
-    cin >> t;
+  // Count of inputs.
+  int t = 0;
+  cin >> t;
 
-    // Fetch inputs.
-    vector<input_type> input_array;
-    int input;
-    while(t--) {
-        input_array.push_back(readNextInput());
-    }
+  // Fetch inputs.
+  vector<input_type> inpurtArray = {};
+  while (t-- > 0) {
+    inpurtArray.push_back(readNextInput());
+  }
 
-    // Solve.
-    for (input_type input: input_array) {
-        solve(input);
-    }
+  // Solve.
+  for (input_type& input : inpurtArray) {
+    solve(input);
+  }
 
-    return 0;
+  return 0;
 }

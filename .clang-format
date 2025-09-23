@@ -1,0 +1,62 @@
+Language: Cpp                               # Specifies the programming language for clang-format
+BasedOnStyle: Google                        # Uses Google's C++ style guide as the base configuration
+Standard: c++17                             # Sets the C++ standard version for language features
+
+# Indentation
+UseTab: Never                               # Always use spaces instead of tabs for indentation
+IndentWidth: 2                              # Number of spaces to use for each indentation level
+TabWidth: 2                                 # Width of tab character in spaces (for mixed tab/space files)
+AccessModifierOffset: -2                    # Offset for access modifiers (public/protected/private) - negative means flush left
+IndentCaseLabels: false                     # Don't indent case labels in switch statements
+NamespaceIndentation: None                  # Don't add extra indentation inside namespace blocks
+
+# Pointers
+PointerAlignment: Left                      # Align pointer/reference symbols to the left (int* ptr, not int *ptr)
+DerivePointerAlignment: false               # Always enforce Left style consistently, don't derive from existing code
+
+# Braces
+BreakBeforeBraces: Attach                   # Place opening braces on the same line as the statement (K&R style)
+
+# Alignment
+AlignAfterOpenBracket: Align                # Align parameters/arguments after opening bracket
+AlignOperands: true                         # Align operands in binary and ternary expressions
+AlignTrailingComments: true                 # Align trailing comments in consecutive lines
+
+# Code layout
+ColumnLimit: 0                              # No column limit - don't force line wrapping at specific width
+AllowShortIfStatementsOnASingleLine: false  # Force if statements to span multiple lines
+AllowShortBlocksOnASingleLine: false        # Force code blocks to span multiple lines
+AllowShortCaseLabelsOnASingleLine: false    # Force case labels to span multiple lines
+AllowShortLoopsOnASingleLine: false         # Force loop statements to span multiple lines
+AllowShortFunctionsOnASingleLine: true      # Allow short functions to be on a single line
+
+# Spacing
+SpaceAfterCStyleCast: false                 # No space after C-style casts: (int)x not (int) x
+SpaceAfterTemplateKeyword: true             # Add space after template keyword: template <class T>
+SpaceBeforeAssignmentOperators: true        # Add space before assignment operators: x = y not x=y
+SpaceBeforeParens: ControlStatements        # Add space before parentheses only in control statements: if (x) not func (x)
+SpaceInEmptyParentheses: false              # No space in empty parentheses: func() not func( )
+SpacesBeforeTrailingComments: 2             # Number of spaces before trailing comments
+SpacesInAngles: false                       # No spaces in angle brackets: <int> not < int >
+SpacesInContainerLiterals: true             # Add spaces in container literals: {1, 2, 3} not {1,2,3}
+SpacesInCStyleCastParentheses: false        # No spaces in C-style cast parentheses: (int)x not ( int )x
+SpacesInParentheses: false                  # No spaces in parentheses: func(x) not func( x )
+SpacesInSquareBrackets: false               # No spaces in square brackets: arr[0] not arr[ 0 ]
+
+# Includes
+SortIncludes: true                          # Automatically sort #include statements
+SortUsingDeclarations: true                 # Automatically sort using declarations
+IncludeCategories:                          # Define priority order for sorting includes
+  - Regex: '^<.*\.h>'                       # C system headers (e.g., <stdio.h>) - highest priority
+    Priority: 1
+  - Regex: "^<.*"                           # C++ standard library headers (e.g., <iostream>) - medium priority
+    Priority: 2
+  - Regex: ".*"                             # Local/project headers (e.g., "myheader.h") - lowest priority
+    Priority: 3
+
+# Misc
+KeepEmptyLinesAtTheStartOfBlocks: false     # Remove empty lines at the beginning of code blocks
+MaxEmptyLinesToKeep: 1                      # Maximum number of consecutive empty lines to keep
+ReflowComments: true                        # Reformat comments to fit within column limits
+DisableFormat: false                        # Enable clang-format (don't disable formatting)
+Cpp11BracedListStyle: true                  # Use C++11 brace list style: {1, 2, 3} instead of { 1, 2, 3 }

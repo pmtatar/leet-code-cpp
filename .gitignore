@@ -1,6 +1,1 @@
-*
-!*/
-!*.cpp
-!.gitignore
-!*.txt
-!cleanup_out.sh
+*.out
