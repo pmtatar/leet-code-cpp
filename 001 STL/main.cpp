@@ -125,36 +125,36 @@ Comparison of STL Containers and Their Iterators
      - May be invalidated by insertion when rehashing occurs
 
 10. Map:
-    - Underlying implementation: Self-balancing binary search tree
-    - Characteristics:
+  - Underlying implementation: Self-balancing binary search tree
+  - Characteristics:
       - Stores key-value pairs with unique keys in sorted order by key
       - Fast search, insertion, and deletion (O(log n))
       - Direct access to values via keys using operator[]
-    - Iterators:
+  - Iterators:
       - Bidirectional iterators
       - Supports: ++, --, ==, !=
       - Not invalidated by insertion or deletion (except erased element)
 
 11. Unordered Map:
-    - Underlying implementation: Hash table
-    - Characteristics:
+  - Underlying implementation: Hash table
+  - Characteristics:
       - Stores key-value pairs with unique keys in no particular order
       - Very fast average search, insertion, and deletion (O(1))
       - Worst case O(n) if many hash collisions
       - Direct access to values via keys using operator[]
-    - Iterators:
+  - Iterators:
       - Forward iterators
       - Supports: ++, ==, !=
       - May be invalidated by insertion when rehashing occurs
 
 12. Multimap:
-    - Underlying implementation: Self-balancing binary search tree
-    - Characteristics:
+  - Underlying implementation: Self-balancing binary search tree
+  - Characteristics:
       - Like map, but allows duplicate keys
       - Keys sorted in specified order
       - Fast search, insertion, and deletion (O(log n))
       - No direct access via operator[], must use methods like find() and equal_range()
-    - Iterators:
+  - Iterators:
       - Bidirectional iterators
       - Supports: ++, --, ==, !=
       - Not invalidated by insertion or deletion (except erased element)
@@ -222,14 +222,14 @@ void examplesVector() {
   // 4. Iterator operations
   cout << "Elements: ";
   for (vector<int>::iterator it = arr.begin(); it != arr.end(); ++it) {
-    cout << *it << " ";
+  cout << *it << " ";
   }
   cout << endl;
 
   // 5. Reverse iterator
   cout << "Reverse elements: ";
   for (vector<int>::reverse_iterator it = arr.rbegin(); it != arr.rend(); ++it) {
-    cout << *it << " ";
+  cout << *it << " ";
   }
   cout << endl;
 
@@ -241,7 +241,7 @@ void examplesVector() {
   // 7. Range-based for loop (modern way)
   vector<int> nums = {1, 2, 3, 4, 5};
   for (const int num : nums) {
-    cout << num << " ";
+  cout << num << " ";
   }
   cout << endl;
 }
@@ -274,19 +274,19 @@ void examplesList() {
   // Remove element
   it = find(myList.begin(), myList.end(), 3);
   if (it != myList.end())
-    myList.erase(it);
+  myList.erase(it);
 
   // 4. Iterator operations
   cout << "Elements: ";
   for (list<int>::iterator it = myList.begin(); it != myList.end(); ++it) {
-    cout << *it << " ";
+  cout << *it << " ";
   }
   cout << endl;
 
   // 5. Reverse iterator
   cout << "Reverse elements: ";
   for (list<int>::reverse_iterator it = myList.rbegin(); it != myList.rend(); ++it) {
-    cout << *it << " ";
+  cout << *it << " ";
   }
   cout << endl;
 
@@ -301,7 +301,7 @@ void examplesList() {
   // 7. Range-based for loop (modern way)
   cout << "Final elements: ";
   for (const int num : myList) {
-    cout << num << " ";
+  cout << num << " ";
   }
   cout << endl;
 }
@@ -337,19 +337,19 @@ void examplesDeque() {
   // Remove element
   it = find(dq.begin(), dq.end(), 3);
   if (it != dq.end())
-    dq.erase(it);
+  dq.erase(it);
 
   // 4. Iterator operations
   cout << "Elements: ";
   for (deque<int>::iterator it = dq.begin(); it != dq.end(); ++it) {
-    cout << *it << " ";
+  cout << *it << " ";
   }
   cout << endl;
 
   // 5. Reverse iterator
   cout << "Reverse elements: ";
   for (deque<int>::reverse_iterator it = dq.rbegin(); it != dq.rend(); ++it) {
-    cout << *it << " ";
+  cout << *it << " ";
   }
   cout << endl;
 
@@ -361,7 +361,7 @@ void examplesDeque() {
   // 7. Range-based for loop (modern way)
   cout << "Final elements: ";
   for (const int num : dq) {
-    cout << num << " ";
+  cout << num << " ";
   }
   cout << endl;
 
@@ -397,8 +397,8 @@ void examplesStack() {
   cout << "Elements (top to bottom): ";
   stack<int> temp = stk;
   while (!temp.empty()) {
-    cout << temp.top() << " ";
-    temp.pop();
+  cout << temp.top() << " ";
+  temp.pop();
   }
   cout << endl;
 
@@ -406,12 +406,12 @@ void examplesStack() {
   vector<int> vec = {1, 2, 3, 4, 5};
   stack<int> reverseStack;
   for (int num : vec) {
-    reverseStack.push(num);
+  reverseStack.push(num);
   }
   cout << "Reversed elements: ";
   while (!reverseStack.empty()) {
-    cout << reverseStack.top() << " ";
-    reverseStack.pop();
+  cout << reverseStack.top() << " ";
+  reverseStack.pop();
   }
   cout << endl;
 
@@ -448,8 +448,8 @@ void examplesQueue() {
   cout << "Elements (front to back): ";
   queue<int> temp = q;
   while (!temp.empty()) {
-    cout << temp.front() << " ";
-    temp.pop();
+  cout << temp.front() << " ";
+  temp.pop();
   }
   cout << endl;
 
@@ -485,8 +485,8 @@ void examplesPriorityQueue() {
   cout << "Elements (in decreasing order): ";
   priority_queue<int> temp = pq;
   while (!temp.empty()) {
-    cout << temp.top() << " ";
-    temp.pop();
+  cout << temp.top() << " ";
+  temp.pop();
   }
   cout << endl;
 
@@ -500,22 +500,22 @@ void examplesPriorityQueue() {
 
   cout << "Min heap elements (in increasing order): ";
   while (!min_pq.empty()) {
-    cout << min_pq.top() << " ";
-    min_pq.pop();
+  cout << min_pq.top() << " ";
+  min_pq.pop();
   }
   cout << endl;
 
   // 6. Using priority queue with custom type
   struct Task {
-    int priority;
-    string name;
-    Task(int p, string n) : priority(p), name(n) {}
+  int priority;
+  string name;
+  Task(int p, string n) : priority(p), name(n) {}
   };
 
   struct CompareTask {
-    bool operator()(const Task& t1, const Task& t2) {
+  bool operator()(const Task& t1, const Task& t2) {
       return t1.priority < t2.priority;
-    }
+  }
   };
 
   priority_queue<Task, vector<Task>, CompareTask> task_pq;
@@ -525,8 +525,8 @@ void examplesPriorityQueue() {
 
   cout << "Processing tasks by priority:" << endl;
   while (!task_pq.empty()) {
-    cout << "Processing: " << task_pq.top().name << " (Priority: " << task_pq.top().priority << ")" << endl;
-    task_pq.pop();
+  cout << "Processing: " << task_pq.top().name << " (Priority: " << task_pq.top().priority << ")" << endl;
+  task_pq.pop();
   }
 }
 
@@ -545,27 +545,27 @@ void examplesSet() {
   mySet.insert("elderberry");
   auto [it, inserted] = mySet.insert("apple");  // Try to insert duplicate
   if (!inserted) {
-    cout << "apple was not inserted, already exists" << endl;
+  cout << "apple was not inserted, already exists" << endl;
   }
 
   // 3. Traversal (elements are always in sorted order)
   cout << "Elements (sorted): ";
   for (const string& fruit : mySet) {
-    cout << fruit << " ";
+  cout << fruit << " ";
   }
   cout << endl;
 
   // 4. Search
   auto findIt = mySet.find("cherry");
   if (findIt != mySet.end()) {
-    cout << "Found cherry in the set" << endl;
+  cout << "Found cherry in the set" << endl;
   }
 
   // 5. Erase
   mySet.erase("banana");
   cout << "After erasing banana: ";
   for (const string& fruit : mySet) {
-    cout << fruit << " ";
+  cout << fruit << " ";
   }
   cout << endl;
 
@@ -574,7 +574,7 @@ void examplesSet() {
   auto upper = mySet.upper_bound("elderberry");
   cout << "Elements from cherry to elderberry: ";
   for (auto it = lower; it != upper; ++it) {
-    cout << *it << " ";
+  cout << *it << " ";
   }
   cout << endl;
 
@@ -582,7 +582,7 @@ void examplesSet() {
   set<string, greater<string>> reverseSet(mySet.begin(), mySet.end());
   cout << "Elements in reverse order: ";
   for (const string& fruit : reverseSet) {
-    cout << fruit << " ";
+  cout << fruit << " ";
   }
   cout << endl;
 
@@ -592,11 +592,11 @@ void examplesSet() {
 
   set<string> unionSet;
   set_union(set1.begin(), set1.end(), set2.begin(), set2.end(),
-            inserter(unionSet, unionSet.begin()));
+      inserter(unionSet, unionSet.begin()));
 
   cout << "Union of set1 and set2: ";
   for (const string& fruit : unionSet) {
-    cout << fruit << " ";
+  cout << fruit << " ";
   }
   cout << endl;
 
@@ -607,7 +607,7 @@ void examplesSet() {
 
   cout << "After extracting cherry and inserting grape: ";
   for (const string& fruit : mySet) {
-    cout << fruit << " ";
+  cout << fruit << " ";
   }
   cout << endl;
 }
@@ -630,7 +630,7 @@ void examplesMultiset() {
   // 3. Traversal
   cout << "Elements: ";
   for (const int& num : myMultiset) {
-    cout << num << " ";
+  cout << num << " ";
   }
   cout << endl;
 
@@ -642,7 +642,7 @@ void examplesMultiset() {
   myMultiset.erase(2);  // Erases all occurrences of 2
   cout << "After erasing all 2s: ";
   for (const int& num : myMultiset) {
-    cout << num << " ";
+  cout << num << " ";
   }
   cout << endl;
 
@@ -650,7 +650,7 @@ void examplesMultiset() {
   auto [lower, upper] = myMultiset.equal_range(3);
   cout << "Elements in equal range of 3: ";
   for (auto it = lower; it != upper; ++it) {
-    cout << *it << " ";
+  cout << *it << " ";
   }
   cout << endl;
 }
@@ -670,27 +670,27 @@ void examplesUnorderedSet() {
   mySet.insert("elderberry");
   auto [it, inserted] = mySet.insert("apple");  // Try to insert duplicate
   if (!inserted) {
-    cout << "apple was not inserted, already exists" << endl;
+  cout << "apple was not inserted, already exists" << endl;
   }
 
   // 3. Traversal (elements may not be in insertion order)
   cout << "Elements (unordered): ";
   for (const string& fruit : mySet) {
-    cout << fruit << " ";
+  cout << fruit << " ";
   }
   cout << endl;
 
   // 4. Search
   auto findIt = mySet.find("cherry");
   if (findIt != mySet.end()) {
-    cout << "Found cherry in the set" << endl;
+  cout << "Found cherry in the set" << endl;
   }
 
   // 5. Erase
   mySet.erase("banana");
   cout << "After erasing banana: ";
   for (const string& fruit : mySet) {
-    cout << fruit << " ";
+  cout << fruit << " ";
   }
   cout << endl;
 
@@ -700,21 +700,21 @@ void examplesUnorderedSet() {
 
   // 7. Custom hash function and equality
   struct CustomHash {
-    size_t operator()(const string& s) const {
+  size_t operator()(const string& s) const {
       return hash<string>{}(s) ^ (hash<size_t>{}(s.length()) << 1);
-    }
+  }
   };
 
   struct CustomEqual {
-    bool operator()(const string& lhs, const string& rhs) const {
+  bool operator()(const string& lhs, const string& rhs) const {
       return lhs.length() == rhs.length() && lhs == rhs;
-    }
+  }
   };
 
   unordered_set<string, CustomHash, CustomEqual> customSet = {"cat", "dog", "bird"};
   cout << "Custom unordered set: ";
   for (const string& animal : customSet) {
-    cout << animal << " ";
+  cout << animal << " ";
   }
   cout << endl;
 
@@ -743,21 +743,21 @@ void examplesMap() {
   // 3. Traversal (elements are always in sorted order by key)
   cout << "Map elements (sorted by key): ";
   for (const auto& pair : fruitMap) {
-    cout << pair.first << ":" << pair.second << " ";
+  cout << pair.first << ":" << pair.second << " ";
   }
   cout << endl;
 
   // 4. Search
   auto findIt = fruitMap.find("cherry");
   if (findIt != fruitMap.end()) {
-    cout << "Found cherry in the map with value: " << findIt->second << endl;
+  cout << "Found cherry in the map with value: " << findIt->second << endl;
   }
 
   // 5. Erase
   fruitMap.erase("banana");
   cout << "After erasing banana: ";
   for (const auto& pair : fruitMap) {
-    cout << pair.first << ":" << pair.second << " ";
+  cout << pair.first << ":" << pair.second << " ";
   }
   cout << endl;
 
@@ -765,14 +765,14 @@ void examplesMap() {
   map<string, int, greater<string>> reverseMap(fruitMap.begin(), fruitMap.end());
   cout << "Map with reverse order: ";
   for (const auto& pair : reverseMap) {
-    cout << pair.first << ":" << pair.second << " ";
+  cout << pair.first << ":" << pair.second << " ";
   }
   cout << endl;
 
   // 7. Performance measurement
   clock_t start = clock();
   for (int i = 0; i < 100000; ++i) {
-    fruitMap[to_string(i)] = i;
+  fruitMap[to_string(i)] = i;
   }
   clock_t end = clock();
   cout << "Time taken by map: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << endl;
@@ -795,21 +795,21 @@ void examplesUnorderedMap() {
   // 3. Traversal (elements may not be in insertion order)
   cout << "Unordered map elements: ";
   for (const auto& pair : animalMap) {
-    cout << pair.first << ":" << pair.second << " ";
+  cout << pair.first << ":" << pair.second << " ";
   }
   cout << endl;
 
   // 4. Search
   auto findIt = animalMap.find("bird");
   if (findIt != animalMap.end()) {
-    cout << "Found bird in the unordered map with value: " << findIt->second << endl;
+  cout << "Found bird in the unordered map with value: " << findIt->second << endl;
   }
 
   // 5. Erase
   animalMap.erase("dog");
   cout << "After erasing dog: ";
   for (const auto& pair : animalMap) {
-    cout << pair.first << ":" << pair.second << " ";
+  cout << pair.first << ":" << pair.second << " ";
   }
   cout << endl;
 
@@ -820,7 +820,7 @@ void examplesUnorderedMap() {
   // 7. Performance measurement
   clock_t start = clock();
   for (int i = 0; i < 100000; ++i) {
-    animalMap[to_string(i)] = i;
+  animalMap[to_string(i)] = i;
   }
   clock_t end = clock();
   cout << "Time taken by unordered_map: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << endl;
@@ -846,7 +846,7 @@ void examplesMultimap() {
   // 3. Traversal (elements are sorted by key)
   cout << "All student scores: " << endl;
   for (const auto& entry : studentScores) {
-    cout << entry.first << ": " << entry.second << endl;
+  cout << entry.first << ": " << entry.second << endl;
   }
 
   // 4. Finding elements with a specific key
@@ -854,7 +854,7 @@ void examplesMultimap() {
   cout << "\nScores for " << searchName << ":" << endl;
   auto range = studentScores.equal_range(searchName);
   for (auto it = range.first; it != range.second; ++it) {
-    cout << it->first << ": " << it->second << endl;
+  cout << it->first << ": " << it->second << endl;
   }
 
   // 5. Counting elements with a specific key
@@ -867,25 +867,25 @@ void examplesMultimap() {
   // 7. Erasing specific element using iterator
   auto it = studentScores.find("Bob");
   if (it != studentScores.end()) {
-    studentScores.erase(it);  // Erase only the first score for Bob
-    cout << "Erased one score for Bob" << endl;
+  studentScores.erase(it);  // Erase only the first score for Bob
+  cout << "Erased one score for Bob" << endl;
   }
 
   // 8. Final multimap state
   cout << "\nFinal student scores: " << endl;
   for (const auto& entry : studentScores) {
-    cout << entry.first << ": " << entry.second << endl;
+  cout << entry.first << ": " << entry.second << endl;
   }
 
   // 9. Using custom comparator (reverse order)
   multimap<string, int, greater<string>> reverseScores;
   for (const auto& entry : studentScores) {
-    reverseScores.insert(entry);
+  reverseScores.insert(entry);
   }
 
   cout << "\nScores in reverse alphabetical order: " << endl;
   for (const auto& entry : reverseScores) {
-    cout << entry.first << ": " << entry.second << endl;
+  cout << entry.first << ": " << entry.second << endl;
   }
 
   // 10. Performance comparison with map
@@ -894,7 +894,7 @@ void examplesMultimap() {
 
   clock_t start = clock();
   for (int i = 0; i < 100000; ++i) {
-    largeMultimap.insert({i % 1000, i});  // Introduces duplicates
+  largeMultimap.insert({i % 1000, i});  // Introduces duplicates
   }
   clock_t end = clock();
   cout << "\nTime taken to insert 100,000 elements into multimap: "
@@ -902,7 +902,7 @@ void examplesMultimap() {
 
   start = clock();
   for (int i = 0; i < 100000; ++i) {
-    largeMap[i] = i;  // No duplicates
+  largeMap[i] = i;  // No duplicates
   }
   end = clock();
   cout << "Time taken to insert 100,000 elements into map: "

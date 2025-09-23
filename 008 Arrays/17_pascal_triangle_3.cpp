@@ -9,27 +9,27 @@ using namespace std;
 class Solution {
 private:
   int nCr(int n, int r) {
-    r = r < (n - r) ? r : (n - r);
-    if (r == 1)
+  r = r < (n - r) ? r : (n - r);
+  if (r == 1)
       return n;
-    int result = 1;
-    for (int i = 0; i < r; ++i) {
+  int result = 1;
+  for (int i = 0; i < r; ++i) {
       result = result * (n - i) / (i + 1);
-    }
-    return result;
+  }
+  return result;
   }
 
 public:
   vector<vector<int>> pascalTriangleIII(int n) {
-    vector<vector<int>> output;
-    for (int i = 0; i < n; ++i) {
+  vector<vector<int>> output;
+  for (int i = 0; i < n; ++i) {
       vector<int> row;
       for (int j = 0; j <= i; ++j) {
-        row.push_back(nCr(i, j));
+    row.push_back(nCr(i, j));
       }
       output.push_back(row);
-    }
-    return output;
+  }
+  return output;
   }
 };
 
@@ -46,16 +46,16 @@ void solve(input_type input) {
 void printArray2D(vector<vector<item_type>> arr) {
   cout << "[";
   for (int i = 0; i < arr.size(); ++i) {
-    cout << "[";
-    printArray(arr[i]);
-    cout << "], ";
+  cout << "[";
+  printArray(arr[i]);
+  cout << "], ";
   }
   cout << "]" << endl;
 }
 
 void printArray(vector<item_type> arr) {
   for (const auto &item : arr) {
-    cout << item << " ";
+  cout << item << " ";
   }
 }
 
@@ -64,16 +64,16 @@ vector<item_type> parseArray(stringstream &ss) {
   vector<item_type> input_array;
   item_type item;
   while (ss >> ch) {
-    if (ch == ']') {
+  if (ch == ']') {
       return input_array;
-    }
-    if (ch == '[' || ch == ',' || ch == ']' || ch == ' ') {
+  }
+  if (ch == '[' || ch == ',' || ch == ']' || ch == ' ') {
       continue;
-    } else {
+  } else {
       ss.putback(ch);
-    }
-    ss >> item;
-    input_array.push_back(item);
+  }
+  ss >> item;
+  input_array.push_back(item);
   }
   return input_array;
 }
@@ -82,15 +82,15 @@ vector<vector<item_type>> parse2DArray(stringstream &ss) {
   char ch;
   vector<vector<item_type>> input_array;
   while (ss >> ch) {
-    if (ch == ']') {
+  if (ch == ']') {
       return input_array;
-    }
-    if (ch == '[' || ch == ',' || ch == ']' || ch == ' ') {
+  }
+  if (ch == '[' || ch == ',' || ch == ']' || ch == ' ') {
       continue;
-    } else {
+  } else {
       ss.putback(ch);
-    }
-    input_array.push_back(parseArray(ss));
+  }
+  input_array.push_back(parseArray(ss));
   }
   return input_array;
 }
@@ -98,14 +98,14 @@ vector<vector<item_type>> parse2DArray(stringstream &ss) {
 vector<item_type> readNextInput() {
   string line;
   while (line.empty()) {
-    getline(cin, line);
+  getline(cin, line);
   }
 
   stringstream ss(line);
   item_type item;
   vector<item_type> input_array;
   while (ss >> item) {
-    input_array.push_back(item);
+  input_array.push_back(item);
   }
 
   return input_array;
@@ -124,12 +124,12 @@ int main() {
   vector<input_type> input_array;
   int input;
   while (t--) {
-    input_array.push_back(readNextInput());
+  input_array.push_back(readNextInput());
   }
 
   // Solve.
   for (input_type input : input_array) {
-    solve(input);
+  solve(input);
   }
 
   return 0;

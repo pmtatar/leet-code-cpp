@@ -9,15 +9,15 @@ using namespace std;
 class Solution {
 public:
   void rotateMatrix(vector<vector<int>> &matrix) {
-    // Use transpose for 90° clockwise rotation.
-    for (int i = 0; i < matrix.size(); ++i) {
+  // Use transpose for 90° clockwise rotation.
+  for (int i = 0; i < matrix.size(); ++i) {
       for (int j = 0; j < i; ++j) {
-        swap(matrix[i][j], matrix[j][i]);
+    swap(matrix[i][j], matrix[j][i]);
       }
-    }
-    for (int i = 0; i < matrix.size(); ++i) {
+  }
+  for (int i = 0; i < matrix.size(); ++i) {
       reverse(matrix[i].begin(), matrix[i].end());
-    }
+  }
   }
 };
 
@@ -34,11 +34,11 @@ void solve(input_type input) {
 void printArray(vector<vector<item_type>> matrix) {
   cout << "[";
   for (const auto &arr : matrix) {
-    cout << "[";
-    for (const auto &item : arr) {
+  cout << "[";
+  for (const auto &item : arr) {
       cout << item << ", ";
-    }
-    cout << "]";
+  }
+  cout << "]";
   }
   cout << "]" << endl;
 }
@@ -48,16 +48,16 @@ vector<item_type> parseArray(stringstream &ss) {
   vector<item_type> input_array;
   item_type item;
   while (ss >> ch) {
-    if (ch == ']') {
+  if (ch == ']') {
       return input_array;
-    }
-    if (ch == '[' || ch == ',' || ch == ']' || ch == ' ') {
+  }
+  if (ch == '[' || ch == ',' || ch == ']' || ch == ' ') {
       continue;
-    } else {
+  } else {
       ss.putback(ch);
-    }
-    ss >> item;
-    input_array.push_back(item);
+  }
+  ss >> item;
+  input_array.push_back(item);
   }
   return input_array;
 }
@@ -66,15 +66,15 @@ vector<vector<item_type>> parse2DArray(stringstream &ss) {
   char ch;
   vector<vector<item_type>> input_array;
   while (ss >> ch) {
-    if (ch == ']') {
+  if (ch == ']') {
       return input_array;
-    }
-    if (ch == '[' || ch == ',' || ch == ']' || ch == ' ') {
+  }
+  if (ch == '[' || ch == ',' || ch == ']' || ch == ' ') {
       continue;
-    } else {
+  } else {
       ss.putback(ch);
-    }
-    input_array.push_back(parseArray(ss));
+  }
+  input_array.push_back(parseArray(ss));
   }
   return input_array;
 }
@@ -82,7 +82,7 @@ vector<vector<item_type>> parse2DArray(stringstream &ss) {
 vector<vector<item_type>> readNextInput() {
   string line;
   while (line.empty()) {
-    getline(cin, line);
+  getline(cin, line);
   }
 
   stringstream ss(line);
@@ -102,12 +102,12 @@ int main() {
   vector<input_type> input_array;
   int input;
   while (t--) {
-    input_array.push_back(readNextInput());
+  input_array.push_back(readNextInput());
   }
 
   // Solve.
   for (input_type input : input_array) {
-    solve(input);
+  solve(input);
   }
 
   return 0;
