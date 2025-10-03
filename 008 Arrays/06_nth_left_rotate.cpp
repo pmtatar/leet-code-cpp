@@ -1,4 +1,9 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <sstream>
+#include <utility>
+#include <algorithm>
 using namespace std;
 
 void print_array(vector<int>& nums) {

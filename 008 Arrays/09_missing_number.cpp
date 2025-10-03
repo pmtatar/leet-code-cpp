@@ -1,4 +1,10 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <sstream>
+#include <utility>
+#include <algorithm>
+#include <numeric>
 using namespace std;
 
 class Solution {
