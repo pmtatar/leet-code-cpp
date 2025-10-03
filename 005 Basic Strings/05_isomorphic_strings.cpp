@@ -1,31 +1,31 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <sstream>
+#include <string>
 #include <unordered_map>
+#include <vector>
 using namespace std;
 
-class Solution{
-  public:
-    bool isomorphicString(string s, string t) {
-      if (s.length() != t.length()) {
+class Solution {
+public:
+  bool isomorphicString(string s, string t) {
+    if (s.length() != t.length()) {
+      return false;
+    }
+    unordered_map<char, char> hash1;
+    unordered_map<char, char> hash2;
+    for (int i = 0; i < s.length(); ++i) {
+      if (hash1[s[i]] == '\0') {
+        hash1[s[i]] = t[i];
+      }
+      if (hash2[t[i]] == '\0') {
+        hash2[t[i]] = s[i];
+      }
+      if (hash1[s[i]] != t[i] || hash2[t[i]] != s[i]) {
         return false;
       }
-      unordered_map<char, char> hash1;
-      unordered_map<char, char> hash2;
-      for (int i = 0; i < s.length(); ++i) {
-        if (hash1[s[i]] == '\0') {
-          hash1[s[i]] = t[i];
-        }
-        if (hash2[t[i]] == '\0') {
-          hash2[t[i]] = s[i];
-        }
-        if (hash1[s[i]] != t[i] || hash2[t[i]] != s[i]) {
-          return false;
-        }
-      }
-      return true;
     }
+    return true;
+  }
 };
 
 void solve(vector<string>& input) {
@@ -44,7 +44,7 @@ int main() {
 
   // Fetch inputs.
   vector<vector<string>> input_array;
-  while(t--) {
+  while (t--) {
     string line;
     while (line.empty()) {
       getline(cin, line);

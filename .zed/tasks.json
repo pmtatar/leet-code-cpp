@@ -1,0 +1,9 @@
+[
+  {
+    "label": "C++ : Build and Run",
+    "command": "clang++ -std=c++17 '${ZED_FILE}' -o '${ZED_STEM}.out' && ./'${ZED_STEM}.out'<'${ZED_STEM}+input.txt'>'${ZED_STEM}+output.txt'",
+    "cwd": "$ZED_DIRNAME",
+    "use_new_terminal": false,
+    "reveal": "always"
+  }
+]

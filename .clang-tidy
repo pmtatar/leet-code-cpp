@@ -1,0 +1,56 @@
+Checks: "
+  bugprone-*,
+  performance-*,
+  readability-*,
+  modernize-*,
+  cppcoreguidelines-*,
+  -readability-identifier-length,
+  -readability-magic-numbers,
+  -readability-convert-member-functions-to-static,
+  -misc-no-recursion,
+  -google-build-using-namespace,
+  -modernize-use-auto,
+  -cppcoreguidelines-owning-memory,
+  -cppcoreguidelines-avoid-magic-numbers"
+
+WarningsAsErrors: ""
+HeaderFilterRegex: ""
+FormatStyle: google
+CheckOptions:
+  # Variables, functions, methods, parameters - camelCase (e.g., myVariable, calculateSum)
+  - key: readability-identifier-naming.VariableCase
+    value: "camelBack"
+  - key: readability-identifier-naming.FunctionCase
+    value: "camelBack"
+  - key: readability-identifier-naming.MethodCase
+    value: "camelBack"
+  - key: readability-identifier-naming.ParameterCase
+    value: "camelBack"
+
+  # Member variables - camelCase with underscore suffix for private/protected
+  - key: readability-identifier-naming.MemberVariableCase
+    value: "camelBack"
+  - key: readability-identifier-naming.PrivateMemberSuffix
+    value: "_"
+  - key: readability-identifier-naming.ProtectedMemberSuffix
+    value: "_"
+
+  # Classes and structs - PascalCase (e.g., MyClass, StudentRecord)
+  - key: readability-identifier-naming.ClassCase
+    value: "CamelCase"
+  - key: readability-identifier-naming.StructCase
+    value: "CamelCase"
+
+  # Enums - PascalCase (e.g., ColorType)
+  - key: readability-identifier-naming.EnumCase
+    value: "CamelCase"
+  - key: readability-identifier-naming.EnumConstantCase
+    value: "CamelCase"
+
+  # Constants - UPPER_CASE (e.g., MAX_SIZE, PI_VALUE)
+  - key: readability-identifier-naming.ConstantCase
+    value: "UPPER_CASE"
+
+  # Macros - UPPER_CASE (e.g., DEBUG_MODE, MAX_BUFFER_SIZE)
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value: "UPPER_CASE"

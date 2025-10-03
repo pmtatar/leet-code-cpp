@@ -1,6 +1,6 @@
 #include <iostream>
-#include <vector>
 #include <sstream>
+#include <vector>
 using namespace std;
 
 /**
@@ -58,14 +58,14 @@ int main() {
 
   // Fetch inputs.
   vector<int> input_array;
-  while(t--) {
+  while (t--) {
     int input;
     cin >> input;
     input_array.push_back(input);
   }
 
   // Solve.
-  for (const int& input: input_array) {
+  for (const int& input : input_array) {
     solve(input);
   }
 

@@ -1,10 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <unordered_map>
-#include <string>
-#include <sstream>
-#include <utility>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <unordered_map>
+#include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -44,7 +44,7 @@ int main() {
 
   // Fetch inputs.
   vector<vector<int>> input_array;
-  while(t--) {
+  while (t--) {
     string line;
     while (line.empty()) {
       getline(cin, line);

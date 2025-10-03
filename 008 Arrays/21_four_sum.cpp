@@ -1,10 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <utility>
 #include <algorithm>
+#include <iostream>
 #include <set>
+#include <sstream>
+#include <string>
+#include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -13,9 +13,11 @@ public:
     vector<vector<int>> result;
     sort(nums.begin(), nums.end());
     for (int i = 0; i < nums.size(); ++i) {
-      if (i > 0 && nums[i] == nums[i-1]) continue;
-      for (int j = i+1; j < nums.size(); ++j) {
-        if (j > i + 1 && nums[j] == nums[j-1]) continue;
+      if (i > 0 && nums[i] == nums[i - 1])
+        continue;
+      for (int j = i + 1; j < nums.size(); ++j) {
+        if (j > i + 1 && nums[j] == nums[j - 1])
+          continue;
         int k = j + 1;
         int l = nums.size() - 1;
         while (k < l) {
@@ -28,8 +30,10 @@ public:
             result.push_back({nums[i], nums[j], nums[k], nums[l]});
             ++k;
             --l;
-            while (k < l && nums[k] == nums[k - 1]) ++k;
-            while (k < l && nums[l] == nums[l + 1]) --l;
+            while (k < l && nums[k] == nums[k - 1])
+              ++k;
+            while (k < l && nums[l] == nums[l + 1])
+              --l;
           }
         }
       }
@@ -124,13 +128,13 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     cin >> input;
     input_array.push_back({readNextInput(), input});
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 

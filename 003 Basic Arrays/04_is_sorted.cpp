@@ -1,14 +1,14 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
 class Solution {
 public:
   bool arraySortedOrNot(int arr[], int n) {
     for (int i = 0; i < n - 1; ++i) {
-      if (arr[i] > arr[i+1]) {
+      if (arr[i] > arr[i + 1]) {
         return false;
       }
     }
@@ -39,7 +39,7 @@ int main() {
 
   int n;
   int num;
-  while(t--) {
+  while (t--) {
     cin >> n;
     input_type input;
     while (n--) {
@@ -50,7 +50,7 @@ int main() {
   }
 
   // Solve.
-  for (const input_type& input: input_array) {
+  for (const input_type& input : input_array) {
     solve(input);
   }
 

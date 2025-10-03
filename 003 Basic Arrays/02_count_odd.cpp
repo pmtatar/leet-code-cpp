@@ -1,12 +1,12 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-  int countOdd(int arr[], int n){
+  int countOdd(int arr[], int n) {
     int count = 0;
     for (int i = 0; i < n; ++i) {
       if (arr[i] % 2 != 0) {
@@ -40,7 +40,7 @@ int main() {
 
   int n;
   int num;
-  while(t--) {
+  while (t--) {
     cin >> n;
     input_type input;
     while (n--) {
@@ -51,7 +51,7 @@ int main() {
   }
 
   // Solve.
-  for (const input_type& input: input_array) {
+  for (const input_type& input : input_array) {
     solve(input);
   }
 

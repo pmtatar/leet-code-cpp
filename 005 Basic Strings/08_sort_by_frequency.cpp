@@ -1,39 +1,39 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <unordered_map>
 #include <algorithm>
-#include <utility>
+#include <iostream>
 #include <map>
 #include <set>
+#include <sstream>
+#include <string>
+#include <unordered_map>
+#include <utility>
+#include <vector>
 using namespace std;
 
-class Solution{
-  public:
-    vector<char> frequencySort(string& s) {
-      map<char, int> hash;
-      for (const char ch : s) {
-        ++hash[ch];
-      }
-
-      set ordered_set(hash.begin(), hash.end(), [](const pair<char, int>& e1, const pair<char, int>& e2) -> bool {
-        if (e1.second > e2.second) {
-          return true;
-        }
-        if (e1.second == e2.second && e1.first < e2.first) {
-          return true;
-        }
-        return false;
-      });
-
-      vector<char> result(ordered_set.size());
-      transform(ordered_set.begin(), ordered_set.end(), result.begin(), [](pair<char, int> e) -> char {
-        return e.first;
-      });
-
-      return result;
+class Solution {
+public:
+  vector<char> frequencySort(string& s) {
+    map<char, int> hash;
+    for (const char ch : s) {
+      ++hash[ch];
     }
+
+    set ordered_set(hash.begin(), hash.end(), [](const pair<char, int>& e1, const pair<char, int>& e2) -> bool {
+      if (e1.second > e2.second) {
+        return true;
+      }
+      if (e1.second == e2.second && e1.first < e2.first) {
+        return true;
+      }
+      return false;
+    });
+
+    vector<char> result(ordered_set.size());
+    transform(ordered_set.begin(), ordered_set.end(), result.begin(), [](pair<char, int> e) -> char {
+      return e.first;
+    });
+
+    return result;
+  }
 };
 
 void solve(vector<string>& input) {
@@ -56,7 +56,7 @@ int main() {
 
   // Fetch inputs.
   vector<vector<string>> input_array;
-  while(t--) {
+  while (t--) {
     string line;
     while (line.empty()) {
       getline(cin, line);

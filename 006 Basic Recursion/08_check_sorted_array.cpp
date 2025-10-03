@@ -1,26 +1,25 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
-class Solution{
-  public:
-    bool isSorted(vector<int>& nums) {
-      return check_is_sorted(nums, 0, 1);
-    }
+class Solution {
+public:
+  bool isSorted(vector<int>& nums) {
+    return check_is_sorted(nums, 0, 1);
+  }
 
-  private:
-    bool check_is_sorted(vector<int>& nums, int left, int right) {
-      if (right >= nums.size()) {
-        return true;
-      }
-      if (nums[left] > nums[right]) {
-        return false;
-      }
-      return check_is_sorted(nums, left + 1, right + 1);
+private:
+  bool check_is_sorted(vector<int>& nums, int left, int right) {
+    if (right >= nums.size()) {
+      return true;
     }
-
+    if (nums[left] > nums[right]) {
+      return false;
+    }
+    return check_is_sorted(nums, left + 1, right + 1);
+  }
 };
 
 typedef int item_type;
@@ -59,15 +58,14 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 
   return 0;
 }
-

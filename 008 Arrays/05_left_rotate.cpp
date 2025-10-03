@@ -1,17 +1,17 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <utility>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
 public:
   void rotateArrayByOne(vector<int>& nums) {
     const int temp = nums[0];
-    for (int i  = 1; i < nums.size(); ++i) {
-      nums[i-1] = nums[i];
+    for (int i = 1; i < nums.size(); ++i) {
+      nums[i - 1] = nums[i];
     }
     nums[nums.size() - 1] = temp;
   }
@@ -57,12 +57,12 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 

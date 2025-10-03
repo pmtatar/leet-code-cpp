@@ -1,12 +1,12 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-  vector<char> reverseString(vector<char>& s){
+  vector<char> reverseString(vector<char>& s) {
     return reverseString_helper(s, 0, s.size() - 1);
   }
 
@@ -59,12 +59,12 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 

@@ -1,6 +1,6 @@
 #include <iostream>
-#include <vector>
 #include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -34,13 +34,13 @@ int main() {
   vector<pair<int, int>> input_array;
   int input1;
   int input2;
-  while(t--) {
+  while (t--) {
     cin >> input1 >> input2;
     input_array.push_back({input1, input2});
   }
 
   // Solve.
-  for (const pair<int, int>& input: input_array) {
+  for (const pair<int, int>& input : input_array) {
     solve(input.first, input.second);
   }
 

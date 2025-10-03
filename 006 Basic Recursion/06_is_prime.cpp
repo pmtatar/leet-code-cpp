@@ -1,29 +1,29 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
 #include <cmath>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
-class Solution{
-  public:
-    bool checkPrime(int num){
-      return is_prime(num, 2);
-    }
+class Solution {
+public:
+  bool checkPrime(int num) {
+    return is_prime(num, 2);
+  }
 
-  private:
-    bool is_prime(int num, int q) {
-      if (num <= 1) {
-        return false;
-      }
-      if (q * q > num) {
-        return true;
-      }
-      if (num % q == 0) {
-        return false;
-      }
-      return is_prime(num, q + 1);
+private:
+  bool is_prime(int num, int q) {
+    if (num <= 1) {
+      return false;
     }
+    if (q * q > num) {
+      return true;
+    }
+    if (num % q == 0) {
+      return false;
+    }
+    return is_prime(num, q + 1);
+  }
 };
 
 typedef int item_type;
@@ -62,15 +62,14 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 
   return 0;
 }
-

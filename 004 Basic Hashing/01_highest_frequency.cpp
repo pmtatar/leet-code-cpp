@@ -1,14 +1,14 @@
 #include <iostream>
-#include <vector>
-#include <unordered_map>
-#include <string>
 #include <sstream>
+#include <string>
+#include <unordered_map>
 #include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
 public:
-  int mostFrequentElement(vector<int> &nums) {
+  int mostFrequentElement(vector<int>& nums) {
     unordered_map<int, int> hash = {};
     for (const int& num : nums) {
       ++hash[num];
@@ -39,7 +39,7 @@ int main() {
 
   // Fetch inputs.
   vector<vector<int>> input_array;
-  while(t--) {
+  while (t--) {
     string line;
     while (line.empty()) {
       getline(cin, line);

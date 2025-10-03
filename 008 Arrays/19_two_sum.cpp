@@ -1,10 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <utility>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
 #include <unordered_map>
+#include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -103,7 +103,7 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int k;
-  while(t--) {
+  while (t--) {
     cin >> k;
     vector<int> arr = readNextInput();
     pair<vector<item_type>, int> input = {arr, k};
@@ -111,7 +111,7 @@ int main() {
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 

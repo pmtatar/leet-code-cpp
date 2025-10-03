@@ -1,11 +1,11 @@
 #include <iostream>
-#include <vector>
 #include <string>
+#include <vector>
 using namespace std;
 
-class Solution{
+class Solution {
 public:
-  string largeOddNum(string& s){
+  string largeOddNum(string& s) {
     int index = s.length();
     while (index--) {
       if ((s[index] - '0') % 2) {
@@ -40,7 +40,7 @@ int main() {
   // Fetch inputs.
   vector<string> input_array;
   string input;
-  while(t--) {
+  while (t--) {
     cin >> input;
     input_array.push_back(input);
   }

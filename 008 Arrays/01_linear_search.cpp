@@ -1,14 +1,15 @@
+#include <cstddef>
 #include <iostream>
-#include <vector>
-#include <string>
 #include <sstream>
+#include <string>
 #include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
 public:
-  int linearSearch(vector<int>& nums, int target) {
-    for (int i = 0; i < nums.size(); ++i) {
+  auto linearSearch(vector<int>& nums, int target) -> size_t {
+    for (size_t i = 0; i < nums.size(); ++i) {
       if (nums[i] == target) {
         return i;
       }
@@ -17,16 +18,18 @@ public:
   }
 };
 
-typedef int item_type;
-typedef pair<vector<item_type>, int> input_type;
+using item_type = int;
+const item_type DEFAULT_ITEM_TYPE = 0;
 
-void solve(input_type input) {
+using input_type = pair<vector<item_type>, int>;
+
+auto solve(input_type input) {
   Solution s;
-  cout << s.linearSearch(input.first, input.second) << endl;
+  cout << s.linearSearch(input.first, input.second) << "\n";
 }
 
-input_type readNextInput() {
-  item_type target;
+auto readNextInput() -> input_type {
+  item_type target = DEFAULT_ITEM_TYPE;
   cin >> target;
 
   string line;
@@ -35,13 +38,13 @@ input_type readNextInput() {
   }
 
   stringstream ss(line);
-  item_type item;
-  vector<item_type> input_array;
+  item_type item = DEFAULT_ITEM_TYPE;
+  vector<item_type> inpurtArray = {};
   while (ss >> item) {
-    input_array.push_back(item);
+    inpurtArray.push_back(item);
   }
 
-  return {input_array, target};
+  return {inpurtArray, target};
 }
 
 int main() {
@@ -50,18 +53,17 @@ int main() {
   cout.tie(0);
 
   // Count of inputs.
-  int t;
+  int t = 0;
   cin >> t;
 
   // Fetch inputs.
-  vector<input_type> input_array;
-  int input;
-  while(t--) {
-    input_array.push_back(readNextInput());
+  vector<input_type> inpurtArray = {};
+  while (t-- > 0) {
+    inpurtArray.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type& input : inpurtArray) {
     solve(input);
   }
 

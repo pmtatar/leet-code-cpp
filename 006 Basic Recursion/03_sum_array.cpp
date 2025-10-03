@@ -1,21 +1,21 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
-class Solution{
-  public:
-    int arraySum_helper(int index, int sum, vector<int>& nums) {
-      if (index < 0) {
-        return sum;
-      }
-      return arraySum_helper(index - 1, sum + nums[index], nums);
+class Solution {
+public:
+  int arraySum_helper(int index, int sum, vector<int>& nums) {
+    if (index < 0) {
+      return sum;
     }
+    return arraySum_helper(index - 1, sum + nums[index], nums);
+  }
 
-    int arraySum(vector<int>& nums){
-      return arraySum_helper(nums.size() - 1, 0, nums);
-    }
+  int arraySum(vector<int>& nums) {
+    return arraySum_helper(nums.size() - 1, 0, nums);
+  }
 };
 
 void solve(vector<int> input) {
@@ -34,7 +34,7 @@ int main() {
 
   // Fetch inputs.
   vector<vector<int>> input_array;
-  while(t--) {
+  while (t--) {
     string line;
     while (line.empty()) {
       getline(cin, line);
@@ -43,14 +43,14 @@ int main() {
     stringstream ss(line);
     vector<int> input;
     int n;
-    while(ss >> n) {
+    while (ss >> n) {
       input.push_back(n);
     }
     input_array.push_back(input);
   }
 
   // Solve.
-  for (const vector<int>& input: input_array) {
+  for (const vector<int>& input : input_array) {
     solve(input);
   }
 

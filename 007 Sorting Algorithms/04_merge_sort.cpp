@@ -1,8 +1,8 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -23,7 +23,7 @@ private:
     }
     int mid = (left + right) / 2;
     mergeSortHelper(nums, left, mid);
-    mergeSortHelper(nums, mid+1, right);
+    mergeSortHelper(nums, mid + 1, right);
     merge(nums, left, mid, right);
   }
 
@@ -31,7 +31,7 @@ private:
     vector<int> temp(right - left + 1);
     int index0 = 0;
     int index1 = left;
-    int index2 = mid+1;
+    int index2 = mid + 1;
     while (index1 <= mid && index2 <= right) {
       if (nums[index1] < nums[index2]) {
         temp[index0++] = nums[index1++];
@@ -92,12 +92,12 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 

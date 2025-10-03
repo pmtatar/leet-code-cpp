@@ -1,33 +1,33 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <sstream>
+#include <string>
 #include <unordered_map>
+#include <vector>
 using namespace std;
 
-class Solution{
-  public:
-    bool anagramStrings(string& s,string t){
-      unordered_map<char, int> hash1;
-      unordered_map<char, int> hash2;
+class Solution {
+public:
+  bool anagramStrings(string& s, string t) {
+    unordered_map<char, int> hash1;
+    unordered_map<char, int> hash2;
 
-      if (s.length() != t.length()) {
+    if (s.length() != t.length()) {
+      return false;
+    }
+
+    for (int i = 0; i < s.length(); ++i) {
+      ++hash1[s[i]];
+      ++hash2[t[i]];
+    }
+
+    for (int i = 0; i < s.length(); ++i) {
+      if (hash1[s[i]] != hash2[s[i]]) {
         return false;
       }
-
-      for (int i = 0; i < s.length(); ++i) {
-        ++hash1[s[i]];
-        ++hash2[t[i]];
-      }
-
-      for (int i = 0; i < s.length(); ++i) {
-        if (hash1[s[i]] != hash2[s[i]]) {
-          return false;
-        }
-      }
-
-      return true;
     }
+
+    return true;
+  }
 };
 
 void solve(vector<string>& input) {
@@ -46,7 +46,7 @@ int main() {
 
   // Fetch inputs.
   vector<vector<string>> input_array;
-  while(t--) {
+  while (t--) {
     string line;
     while (line.empty()) {
       getline(cin, line);

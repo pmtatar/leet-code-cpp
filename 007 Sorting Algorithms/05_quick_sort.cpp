@@ -1,8 +1,8 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -24,8 +24,8 @@ private:
       return;
     }
     int pivot = partition(nums, left, right);
-    quickSortHelper(nums, left, pivot-1);
-    quickSortHelper(nums, pivot+1, right);
+    quickSortHelper(nums, left, pivot - 1);
+    quickSortHelper(nums, pivot + 1, right);
   }
 
   int partition(vector<int>& nums, int left, int right) {
@@ -35,8 +35,10 @@ private:
     int i = left;
     int j = right;
     while (i < j) {
-      while (nums[i] <= pivotItem && i < right) ++i;
-      while (nums[j] > pivotItem && j > left) --j;
+      while (nums[i] <= pivotItem && i < right)
+        ++i;
+      while (nums[j] > pivotItem && j > left)
+        --j;
       if (i < j) {
         swap(nums[i], nums[j]);
       }
@@ -87,12 +89,12 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 

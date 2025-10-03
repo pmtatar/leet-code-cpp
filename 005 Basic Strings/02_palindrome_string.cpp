@@ -1,20 +1,20 @@
-#include <iostream>
-#include <vector>
-#include <string>
 #include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
 
-class Solution{
-  public:
-    bool palindromeCheck(string& s){
-      const int length = s.length();
-      for (int i = 0; i < length / 2; ++i) {
-        if (s[i] != s[length - i - 1]) {
-          return false;
-        }
+class Solution {
+public:
+  bool palindromeCheck(string& s) {
+    const int length = s.length();
+    for (int i = 0; i < length / 2; ++i) {
+      if (s[i] != s[length - i - 1]) {
+        return false;
       }
-      return true;
     }
+    return true;
+  }
 };
 
 void solve(string& input) {
@@ -34,7 +34,7 @@ int main() {
   // Fetch inputs.
   vector<string> input_array;
   string input;
-  while(t--) {
+  while (t--) {
     cin >> input;
     input_array.push_back(input);
   }

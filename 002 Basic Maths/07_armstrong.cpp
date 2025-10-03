@@ -1,6 +1,6 @@
+#include <cmath>
 #include <iostream>
 #include <vector>
-#include <cmath>
 using namespace std;
 
 class Solution {
@@ -10,7 +10,7 @@ public:
     do {
       digits += 1;
       n /= 10;
-    } while(n > 0);
+    } while (n > 0);
     return digits;
   }
 
@@ -57,13 +57,13 @@ int main() {
   // Fetch inputs.
   vector<int> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     cin >> input;
     input_array.push_back(input);
   }
 
   // Solve.
-  for (const int& input: input_array) {
+  for (const int& input : input_array) {
     solve(input);
   }
 

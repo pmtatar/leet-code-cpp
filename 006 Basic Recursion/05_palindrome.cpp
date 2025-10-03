@@ -1,19 +1,19 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
 typedef string item_type;
 typedef vector<item_type> input_type;
 
 class Solution {
-   public:
+public:
   bool palindromeCheck(string& s) {
     return palindromeCheck_helper(s, 0, s.size() - 1);
   }
 
-  private:
+private:
   bool palindromeCheck_helper(string& s, int left, int right) {
     if (left >= right) {
       return true;
@@ -58,12 +58,12 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 

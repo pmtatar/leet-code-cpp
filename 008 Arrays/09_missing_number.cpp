@@ -1,10 +1,10 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <utility>
 #include <algorithm>
+#include <iostream>
 #include <numeric>
+#include <sstream>
+#include <string>
+#include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -51,12 +51,12 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 

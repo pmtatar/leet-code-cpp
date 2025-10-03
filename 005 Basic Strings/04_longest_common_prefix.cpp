@@ -1,26 +1,26 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
-class Solution{
-  public:
-    string longestCommonPrefix(vector<string>& str){
-      string prefix = str[0];
-      for (auto it = str.begin() + 1; it != str.end(); ++it) {
-        const int length = min(prefix.length(), (*it).length());
-        int index = 0;
-        for (index = 0; index < length; ++index) {
-          if (prefix[index] != (*it)[index]) {
-            break;
-          }
+class Solution {
+public:
+  string longestCommonPrefix(vector<string>& str) {
+    string prefix = str[0];
+    for (auto it = str.begin() + 1; it != str.end(); ++it) {
+      const int length = min(prefix.length(), (*it).length());
+      int index = 0;
+      for (index = 0; index < length; ++index) {
+        if (prefix[index] != (*it)[index]) {
+          break;
         }
-        prefix.erase(index, prefix.length());
       }
-      return prefix;
+      prefix.erase(index, prefix.length());
     }
+    return prefix;
+  }
 };
 
 void solve(vector<string>& input) {
@@ -39,7 +39,7 @@ int main() {
 
   // Fetch inputs.
   vector<vector<string>> input_array;
-  while(t--) {
+  while (t--) {
     string line;
     while (line.empty()) {
       getline(cin, line);

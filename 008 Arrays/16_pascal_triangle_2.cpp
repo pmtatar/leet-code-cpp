@@ -1,16 +1,17 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <utility>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
 private:
   int nCr(int n, int r) {
     r = r < (n - r) ? r : (n - r);
-    if (r == 1) return n;
+    if (r == 1)
+      return n;
     int result = 1;
     for (int i = 0; i < r; ++i) {
       result = result * (n - i) / (i + 1);
@@ -108,12 +109,12 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 

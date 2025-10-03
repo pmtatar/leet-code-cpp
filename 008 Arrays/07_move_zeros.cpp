@@ -1,9 +1,9 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <utility>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -11,9 +11,11 @@ public:
   void moveZeroes(vector<int>& nums) {
     int zero_index = 0;
     int zero_end_index;
-    while (zero_index < nums.size() && nums[zero_index] != 0) ++zero_index;
+    while (zero_index < nums.size() && nums[zero_index] != 0)
+      ++zero_index;
     zero_end_index = zero_index;
-    while (zero_end_index < nums.size() && nums[zero_end_index] == 0) ++zero_end_index;
+    while (zero_end_index < nums.size() && nums[zero_end_index] == 0)
+      ++zero_end_index;
     while (zero_end_index < nums.size()) {
       if (nums[zero_end_index] != 0) {
         swap(nums[zero_index], nums[zero_end_index]);
@@ -30,7 +32,7 @@ typedef vector<item_type> input_type;
 void solve(input_type input) {
   Solution s;
   s.moveZeroes(input);
-  for (const int& num: input) {
+  for (const int& num : input) {
     cout << num << " ";
   }
   cout << endl;
@@ -64,12 +66,12 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 

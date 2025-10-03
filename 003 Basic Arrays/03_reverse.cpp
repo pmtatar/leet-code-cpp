@@ -1,16 +1,16 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
-class Solution{
+class Solution {
 public:
   void reverse(int arr[], int n) {
     for (int i = 0; i < n / 2; ++i) {
       arr[i] = arr[i] + arr[n - i - 1];
-      arr[n - i -1] = arr[i] - arr[n - i - 1];
+      arr[n - i - 1] = arr[i] - arr[n - i - 1];
       arr[i] = arr[i] - arr[n - i - 1];
     }
   }
@@ -43,7 +43,7 @@ int main() {
 
   int n;
   int num;
-  while(t--) {
+  while (t--) {
     cin >> n;
     input_type input;
     while (n--) {
@@ -54,7 +54,7 @@ int main() {
   }
 
   // Solve.
-  for (const input_type& input: input_array) {
+  for (const input_type& input : input_array) {
     solve(input);
   }
 

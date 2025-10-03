@@ -58,13 +58,13 @@ int main() {
   // Fetch inputs.
   vector<int> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     cin >> input;
     input_array.push_back(input);
   }
 
   // Solve.
-  for (const int& input: input_array) {
+  for (const int& input : input_array) {
     solve(input);
   }
 

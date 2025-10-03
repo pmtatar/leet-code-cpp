@@ -31,13 +31,13 @@ int main() {
   // Fetch inputs.
   vector<int> inputs;
   int input;
-  while(t--) {
+  while (t--) {
     cin >> input;
     inputs.push_back(input);
   }
 
   // Solve.
-  for (const int& input: inputs) {
+  for (const int& input : inputs) {
     solve(input);
   }
 

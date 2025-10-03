@@ -1,0 +1,62 @@
+Language: Cpp
+BasedOnStyle: Google
+Standard: c++17
+
+# Indentation
+UseTab: Never
+IndentWidth: 2
+TabWidth: 2
+AccessModifierOffset: -2 # public/protected/private flush left
+IndentCaseLabels: false
+NamespaceIndentation: None
+
+# Pointers
+PointerAlignment: Left
+DerivePointerAlignment: false # always enforce Left style (int* ptr)
+
+# Braces
+BreakBeforeBraces: Attach
+
+# Alignment
+AlignAfterOpenBracket: Align
+AlignOperands: true
+AlignTrailingComments: true
+
+# Code layout
+ColumnLimit: 0 # no forced wrapping
+AllowShortIfStatementsOnASingleLine: false
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: All
+
+# Spacing
+SpaceAfterCStyleCast: true
+SpaceAfterTemplateKeyword: true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 2
+SpacesInAngles: false
+SpacesInContainerLiterals: true
+SpacesInCStyleCastParentheses: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+
+# Includes
+SortIncludes: true
+SortUsingDeclarations: true
+IncludeCategories:
+  - Regex: '^<.*\.h>'
+    Priority: 1
+  - Regex: "^<.*"
+    Priority: 2
+  - Regex: ".*"
+    Priority: 3
+
+# Misc
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 1
+ReflowComments: true
+DisableFormat: false
+Cpp11BracedListStyle: true

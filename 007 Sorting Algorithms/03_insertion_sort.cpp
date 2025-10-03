@@ -1,8 +1,8 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -16,10 +16,10 @@ public:
       const int key = nums[i];
       int j = i - 1;
       for (; j >= 0 && nums[j] > key; --j) {
-        nums[j+1] = nums[j];
+        nums[j + 1] = nums[j];
       }
       // jth element is smaller than key. So insert key after j.
-      nums[j+1] = key;
+      nums[j + 1] = key;
     }
     return nums;
   }
@@ -65,12 +65,12 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 

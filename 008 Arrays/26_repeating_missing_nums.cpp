@@ -1,9 +1,7 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <sstream>
-#include <utility>
-#include <algorithm>
+#include <string>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -15,7 +13,7 @@ public:
 
     long long actual_sum_n = 0;
     long long actual_sum_sq_n = 0;
-    for (const long long& n: nums) {
+    for (const long long& n : nums) {
       actual_sum_n += n;
       actual_sum_sq_n += (n * n);
     }
@@ -71,14 +69,14 @@ public:
     for (const int& n : nums) {
       if ((n & right_bit) != 0) {
         one ^= n;
-      }  else {
+      } else {
         zero ^= n;
       }
     }
     for (int i = 1; i <= nums.size(); ++i) {
       if ((i & right_bit) != 0) {
         one ^= i;
-      }  else {
+      } else {
         zero ^= i;
       }
     }
@@ -181,15 +179,14 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 
   return 0;
 }
-

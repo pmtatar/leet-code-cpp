@@ -1,18 +1,18 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
-class Solution{
-  public:
-    void reverseString(vector<char>& s){
-      const int length = s.size();
-      for (int i = 0; i < length / 2; ++i) {
-        swap(s[i], s[length - i - 1]);
-      }
+class Solution {
+public:
+  void reverseString(vector<char>& s) {
+    const int length = s.size();
+    for (int i = 0; i < length / 2; ++i) {
+      swap(s[i], s[length - i - 1]);
     }
+  }
 };
 
 void solve(vector<char>& input) {
@@ -35,7 +35,7 @@ int main() {
 
   // Fetch inputs.
   vector<vector<char>> input_array;
-  while(t--) {
+  while (t--) {
     string line;
     while (line.empty()) {
       getline(cin, line);

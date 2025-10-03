@@ -1,9 +1,9 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <sstream>
-#include <utility>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <utility>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -11,7 +11,7 @@ public:
   int secondLargestElement(vector<int>& nums) {
     int max_element = INT_MIN;
     int second_max_element = INT_MIN;
-    for (const int& num: nums) {
+    for (const int& num : nums) {
       if (num > max_element) {
         second_max_element = max_element;
         max_element = num;
@@ -59,12 +59,12 @@ int main() {
   // Fetch inputs.
   vector<input_type> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input: input_array) {
+  for (input_type input : input_array) {
     solve(input);
   }
 

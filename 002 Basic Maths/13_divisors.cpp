@@ -1,8 +1,8 @@
-#include <iostream>
-#include <vector>
-#include <cmath>
 #include <algorithm>
+#include <cmath>
+#include <iostream>
 #include <set>
+#include <vector>
 using namespace std;
 
 class Solution {
@@ -24,7 +24,7 @@ void solve(int input) {
   vector<int> divisors = s.divisors(input);
   cout << "{";
   if (divisors.size() > 0) {
-    for (auto it = divisors.begin(); it != divisors.end()-1; ++it) {
+    for (auto it = divisors.begin(); it != divisors.end() - 1; ++it) {
       cout << *it << ", ";
     }
     cout << divisors.back();
@@ -44,13 +44,13 @@ int main() {
   // Fetch inputs.
   vector<int> input_array;
   int input;
-  while(t--) {
+  while (t--) {
     cin >> input;
     input_array.push_back(input);
   }
 
   // Solve.
-  for (const int& input: input_array) {
+  for (const int& input : input_array) {
     solve(input);
   }
 

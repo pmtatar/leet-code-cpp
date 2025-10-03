@@ -1,31 +1,31 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
-class Solution{
-  public:
-    bool rotateString(string& s,string& goal){
-      if (s.length() != goal.length()) {
-        return false;
-      }
-
-      for (int i = 0; i < goal.length(); ++i) {
-        int i1 = 0;
-        int i2 = i;
-        for (i1 = 0; i1 < goal.length(); ++i1, ++i2 %= goal.length()) {
-          if (s[i1] != goal[i2]) {
-            break;
-          }
-        }
-        if (i1 == goal.length()) {
-          return true;
-        }
-      }
-
+class Solution {
+public:
+  bool rotateString(string& s, string& goal) {
+    if (s.length() != goal.length()) {
       return false;
     }
+
+    for (int i = 0; i < goal.length(); ++i) {
+      int i1 = 0;
+      int i2 = i;
+      for (i1 = 0; i1 < goal.length(); ++i1, ++i2 %= goal.length()) {
+        if (s[i1] != goal[i2]) {
+          break;
+        }
+      }
+      if (i1 == goal.length()) {
+        return true;
+      }
+    }
+
+    return false;
+  }
 };
 
 void solve(vector<string>& input) {
@@ -44,7 +44,7 @@ int main() {
 
   // Fetch inputs.
   vector<vector<string>> input_array;
-  while(t--) {
+  while (t--) {
     string line;
     while (line.empty()) {
       getline(cin, line);

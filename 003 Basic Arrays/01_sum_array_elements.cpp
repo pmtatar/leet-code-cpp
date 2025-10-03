@@ -1,13 +1,13 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
-class Solution{
+class Solution {
 public:
   int sum(int arr[], int n) {
     int total = 0;
-    for (int i= 0; i < n; ++i) {
+    for (int i = 0; i < n; ++i) {
       total += arr[i];
     }
     return total;
@@ -37,7 +37,7 @@ int main() {
 
   int n;
   int num;
-  while(t--) {
+  while (t--) {
     cin >> n;
     input_type input;
     while (n--) {
@@ -48,7 +48,7 @@ int main() {
   }
 
   // Solve.
-  for (const input_type& input: input_array) {
+  for (const input_type& input : input_array) {
     solve(input);
   }
 
