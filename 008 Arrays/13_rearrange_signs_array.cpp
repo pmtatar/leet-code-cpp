@@ -8,7 +8,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> rearrangeArray(vector<int>& nums) {
+  vector<int> rearrangeArray(const vector<int>& nums) {
     int pos_index = 0;
     int neg_index = 0;
     vector<int> output;
@@ -52,14 +52,14 @@ vector<item_type> readNextInput() {
   return input_array;
 }
 
-void printArray(vector<item_type> arr) {
+void printArray(const vector<item_type>& arr) {
   for (const auto& item : arr) {
     cout << item << " ";
   }
   cout << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);
@@ -70,14 +70,13 @@ int main() {
 
   // Fetch inputs.
   vector<input_type> input_array;
-  int input;
   while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input : input_array) {
-    solve(input);
+  for (const input_type& inp : input_array) {
+    solve(inp);
   }
 
   return 0;

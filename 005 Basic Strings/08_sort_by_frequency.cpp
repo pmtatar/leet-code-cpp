@@ -11,7 +11,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<char> frequencySort(string& s) {
+  vector<char> frequencySort(const string& s) {
     map<char, int> hash;
     for (const char ch : s) {
       ++hash[ch];
@@ -45,7 +45,7 @@ void solve(vector<string>& input) {
   cout << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);

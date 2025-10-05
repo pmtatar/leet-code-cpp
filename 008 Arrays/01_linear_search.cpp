@@ -8,7 +8,7 @@ using namespace std;
 
 class Solution {
 public:
-  auto linearSearch(vector<int>& nums, int target) -> int {
+  auto linearSearch(const vector<int>& nums, int target) -> int {
     for (size_t i = 0; i < nums.size(); ++i) {
       if (nums[i] == target) {
         return (int)i;
@@ -47,7 +47,7 @@ auto readNextInput() -> input_type {
   return {inpurtArray, target};
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);
@@ -63,7 +63,7 @@ int main() {
   }
 
   // Solve.
-  for (input_type& input : inpurtArray) {
+  for (const input_type& input : inpurtArray) {
     solve(input);
   }
 

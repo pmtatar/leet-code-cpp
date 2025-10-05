@@ -123,7 +123,7 @@ vector<item_type> parseArray(stringstream& ss) {
     if (ch == ']') {
       return input_array;
     }
-    if (ch == '[' || ch == ',' || ch == ']' || ch == ' ') {
+    if (ch == '[' || ch == ',' || ch == ' ') {
       continue;
     } else {
       ss.putback(ch);
@@ -141,7 +141,7 @@ vector<vector<item_type>> parse2DArray(stringstream& ss) {
     if (ch == ']') {
       return input_array;
     }
-    if (ch == '[' || ch == ',' || ch == ']' || ch == ' ') {
+    if (ch == '[' || ch == ',' || ch == ' ') {
       continue;
     } else {
       ss.putback(ch);
@@ -167,7 +167,7 @@ vector<item_type> readNextInput() {
   return input_array;
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);

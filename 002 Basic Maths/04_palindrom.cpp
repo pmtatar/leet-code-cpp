@@ -23,7 +23,7 @@ void solve(int input) {
   cout << s.isPalindrome(input) << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);
@@ -34,15 +34,15 @@ int main() {
 
   // Fetch inputs.
   vector<int> input_array;
-  int input;
   while (t--) {
+    int input;
     cin >> input;
     input_array.push_back(input);
   }
 
   // Solve.
-  for (const int& input : input_array) {
-    solve(input);
+  for (const int& inp : input_array) {
+    solve(inp);
   }
 
   return 0;

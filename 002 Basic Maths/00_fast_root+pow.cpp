@@ -6,14 +6,13 @@ using namespace std;
 /**
  * Fast Square Root using binary search.
  */
-int FastSquareRoot(int num) {
+auto FastSquareRoot(int num) -> int {
   int result = 0;
   int left = 0;
   int right = num;
-  int mid = 0;
   while (left <= right) {
-    mid = left + (right - left) / 2;
-    if (1ll * mid * mid <= num) {
+    int mid = left + (right - left) / 2;
+    if (1LL * mid * mid <= num) {
       result = mid;
       left = mid + 1;
     } else {
@@ -26,7 +25,7 @@ int FastSquareRoot(int num) {
 /**
  * Fast Power using bit manipulation.
  */
-int FastPower(int num, int exp) {
+auto FastPower(int num, int exp) -> int {
   int result = 1;
   int curr = num;
   while (exp > 0) {
@@ -39,7 +38,7 @@ int FastPower(int num, int exp) {
   return result;
 }
 
-void solve(int input) {
+auto solve(int input) -> void {
   ostringstream sq_root;
   ostringstream cube;
   sq_root << input << "^(1/2) = " << FastSquareRoot(input);
@@ -47,7 +46,7 @@ void solve(int input) {
   cout << sq_root.str() << " | " << cube.str() << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);

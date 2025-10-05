@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int countDigit(int n) {
+  auto countDigit(int n) -> int {
     int count = 0;
     do {
       n /= 10;
@@ -14,12 +14,12 @@ public:
   }
 };
 
-void solve(int input) {
+auto solve(int input) -> void {
   Solution s;
   cout << s.countDigit(input) << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);
@@ -30,15 +30,15 @@ int main() {
 
   // Fetch inputs.
   vector<int> inputs;
-  int input;
   while (t--) {
+    int input;
     cin >> input;
     inputs.push_back(input);
   }
 
   // Solve.
-  for (const int& input : inputs) {
-    solve(input);
+  for (const int& inp : inputs) {
+    solve(inp);
   }
 
   return 0;

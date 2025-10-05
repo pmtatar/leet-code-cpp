@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution {
 public:
-  bool anagramStrings(string& s, string t) {
+  bool anagramStrings(const string& s, const string& t) {
     unordered_map<char, int> hash1;
     unordered_map<char, int> hash2;
 
@@ -35,7 +35,7 @@ void solve(vector<string>& input) {
   cout << s.anagramStrings(input[0], input[1]) << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);

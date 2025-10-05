@@ -6,7 +6,7 @@
 #include <vector>
 using namespace std;
 
-void print_array(vector<int>& nums) {
+void print_array(const vector<int>& nums) {
   for (const int& num : nums) {
     cout << num << " ";
   }
@@ -68,7 +68,7 @@ input_type readNextInput() {
   return {input_array, k};
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);
@@ -79,14 +79,13 @@ int main() {
 
   // Fetch inputs.
   vector<input_type> input_array;
-  int input;
   while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input : input_array) {
-    solve(input);
+  for (const input_type& inp : input_array) {
+    solve(inp);
   }
 
   return 0;

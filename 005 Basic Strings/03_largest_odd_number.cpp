@@ -28,7 +28,7 @@ void solve(string& input) {
   cout << s.largeOddNum(input) << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);
@@ -39,15 +39,15 @@ int main() {
 
   // Fetch inputs.
   vector<string> input_array;
-  string input;
   while (t--) {
+    string input;
     cin >> input;
     input_array.push_back(input);
   }
 
   // Solve.
-  for (string& input : input_array) {
-    solve(input);
+  for (string& inp : input_array) {
+    solve(inp);
   }
 
   return 0;

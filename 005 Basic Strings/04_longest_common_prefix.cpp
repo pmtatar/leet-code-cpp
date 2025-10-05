@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution {
 public:
-  string longestCommonPrefix(vector<string>& str) {
+  string longestCommonPrefix(const vector<string>& str) {
     string prefix = str[0];
     for (auto it = str.begin() + 1; it != str.end(); ++it) {
       const int length = min(prefix.length(), (*it).length());
@@ -28,7 +28,7 @@ void solve(vector<string>& input) {
   cout << s.longestCommonPrefix(input) << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);

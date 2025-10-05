@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 public:
-  bool rotateString(string& s, string& goal) {
+  bool rotateString(const string& s, const string& goal) {
     if (s.length() != goal.length()) {
       return false;
     }
@@ -33,7 +33,7 @@ void solve(vector<string>& input) {
   cout << s.rotateString(input[0], input[1]) << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);

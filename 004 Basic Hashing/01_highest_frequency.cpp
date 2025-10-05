@@ -8,13 +8,13 @@ using namespace std;
 
 class Solution {
 public:
-  int mostFrequentElement(vector<int>& nums) {
+  int mostFrequentElement(const vector<int>& nums) {
     unordered_map<int, int> hash = {};
     for (const int& num : nums) {
       ++hash[num];
     }
     pair<int, int> result = {0, 0};
-    for (auto it : hash) {
+    for (const auto& it : hash) {
       if (result.second < it.second || (result.second == it.second && result.first > it.first)) {
         result = {it.first, it.second};
       }
@@ -28,7 +28,7 @@ void solve(vector<int>& input) {
   cout << s.mostFrequentElement(input) << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);

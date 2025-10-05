@@ -19,10 +19,10 @@ public:
   }
 };
 
-typedef int item_type;
-typedef vector<item_type> input_type;
+using item_type = int;
+using input_type = vector<item_type>;
 
-void solve(input_type input) {
+void solve(const input_type& input) {
   Solution s;
   cout << s.addDigits(input[0]) << "\n";
 }
@@ -34,8 +34,8 @@ input_type readNextInput() {
   }
 
   stringstream ss(line);
-  item_type item;
   input_type input_array;
+  item_type item{};
   while (ss >> item) {
     input_array.push_back(item);
   }
@@ -43,7 +43,7 @@ input_type readNextInput() {
   return input_array;
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);
@@ -54,14 +54,13 @@ int main() {
 
   // Fetch inputs.
   vector<input_type> input_array;
-  int input;
   while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input : input_array) {
-    solve(input);
+  for (const input_type& inp : input_array) {
+    solve(inp);
   }
 
   return 0;

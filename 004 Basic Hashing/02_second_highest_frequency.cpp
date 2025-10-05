@@ -9,7 +9,7 @@ using namespace std;
 
 class Solution {
 public:
-  int secondMostFrequentElement(vector<int>& nums) {
+  int secondMostFrequentElement(const vector<int>& nums) {
     unordered_map<int, int> hash = {};
     for (const int& num : nums) {
       ++hash[num];
@@ -43,7 +43,7 @@ void solve(vector<int>& input) {
   cout << s.secondMostFrequentElement(input) << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);

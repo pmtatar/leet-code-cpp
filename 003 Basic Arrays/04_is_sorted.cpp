@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 public:
-  bool arraySortedOrNot(int arr[], int n) {
+  bool arraySortedOrNot(const int arr[], int n) {
     for (int i = 0; i < n - 1; ++i) {
       if (arr[i] > arr[i + 1]) {
         return false;
@@ -24,7 +24,7 @@ void solve(vector<int> input) {
   cout << s.arraySortedOrNot(arr, n) << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);

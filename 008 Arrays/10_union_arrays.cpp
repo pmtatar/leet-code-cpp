@@ -9,7 +9,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> unionArray(vector<int>& nums1, vector<int>& nums2) {
+  vector<int> unionArray(const vector<int>& nums1, const vector<int>& nums2) {
     vector<int> output;
     output.push_back(min(nums1.front(), nums2.front()));
     int index1 = 0;
@@ -89,7 +89,7 @@ input_type readNextInput() {
   return {input_array1, input_array2};
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);
@@ -100,14 +100,13 @@ int main() {
 
   // Fetch inputs.
   vector<input_type> input_array;
-  int input;
   while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input : input_array) {
-    solve(input);
+  for (const input_type& inp : input_array) {
+    solve(inp);
   }
 
   return 0;

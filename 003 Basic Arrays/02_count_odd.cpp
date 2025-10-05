@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 public:
-  int countOdd(int arr[], int n) {
+  int countOdd(const int arr[], int n) {
     int count = 0;
     for (int i = 0; i < n; ++i) {
       if (arr[i] % 2 != 0) {
@@ -25,7 +25,7 @@ void solve(vector<int> input) {
   cout << s.countOdd(arr, n) << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);

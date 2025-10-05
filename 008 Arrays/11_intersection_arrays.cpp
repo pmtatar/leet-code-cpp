@@ -9,7 +9,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> intersectionArray(vector<int>& nums1, vector<int>& nums2) {
+  vector<int> intersectionArray(const vector<int>& nums1, const vector<int>& nums2) {
     vector<int> output;
     int index1 = 0;
     int index2 = 0;
@@ -58,7 +58,7 @@ vector<item_type> readNextInput() {
   return input_array;
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);
@@ -69,14 +69,13 @@ int main() {
 
   // Fetch inputs.
   vector<input_type> input_array;
-  int input;
   while (t--) {
     input_array.push_back({readNextInput(), readNextInput()});
   }
 
   // Solve.
-  for (input_type input : input_array) {
-    solve(input);
+  for (const input_type& inp : input_array) {
+    solve(inp);
   }
 
   return 0;

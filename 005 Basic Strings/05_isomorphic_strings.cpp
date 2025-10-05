@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution {
 public:
-  bool isomorphicString(string s, string t) {
+  bool isomorphicString(const string& s, const string& t) {
     if (s.length() != t.length()) {
       return false;
     }
@@ -28,12 +28,12 @@ public:
   }
 };
 
-void solve(vector<string>& input) {
+void solve(const vector<string>& input) {
   Solution s;
   cout << s.isomorphicString(input[0], input[1]) << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);

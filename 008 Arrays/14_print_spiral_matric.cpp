@@ -8,7 +8,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> spiralOrder(vector<vector<int>>& matrix) {
+  vector<int> spiralOrder(const vector<vector<int>>& matrix) {
     int left = 0;
     int top = 0;
     int right = matrix[0].size() - 1;
@@ -51,7 +51,7 @@ void solve(input_type input) {
   printArray(s.spiralOrder(input));
 }
 
-void printArray(vector<item_type> arr) {
+void printArray(const vector<item_type>& arr) {
   for (const auto& item : arr) {
     cout << item << " ";
   }
@@ -66,7 +66,7 @@ vector<item_type> parseArray(stringstream& ss) {
     if (ch == ']') {
       return input_array;
     }
-    if (ch == '[' || ch == ',' || ch == ']' || ch == ' ') {
+    if (ch == '[' || ch == ',' || ch == ' ') {
       continue;
     } else {
       ss.putback(ch);
@@ -84,7 +84,7 @@ vector<vector<item_type>> parse2DArray(stringstream& ss) {
     if (ch == ']') {
       return input_array;
     }
-    if (ch == '[' || ch == ',' || ch == ']' || ch == ' ') {
+    if (ch == '[' || ch == ',' || ch == ' ') {
       continue;
     } else {
       ss.putback(ch);
@@ -104,7 +104,7 @@ vector<vector<item_type>> readNextInput() {
   return parse2DArray(ss);
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);
@@ -115,14 +115,13 @@ int main() {
 
   // Fetch inputs.
   vector<input_type> input_array;
-  int input;
   while (t--) {
     input_array.push_back(readNextInput());
   }
 
   // Solve.
-  for (input_type input : input_array) {
-    solve(input);
+  for (const input_type& inp : input_array) {
+    solve(inp);
   }
 
   return 0;

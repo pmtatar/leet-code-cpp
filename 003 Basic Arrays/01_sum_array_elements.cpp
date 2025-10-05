@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-  int sum(int arr[], int n) {
+  int sum(const int arr[], int n) {
     int total = 0;
     for (int i = 0; i < n; ++i) {
       total += arr[i];
@@ -22,7 +22,7 @@ void solve(vector<int> input) {
   cout << s.sum(arr, n) << "\n";
 }
 
-int main() {
+auto main() -> int {
   ios_base::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);

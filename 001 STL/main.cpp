@@ -279,15 +279,15 @@ void examplesList() {
 
   // 4. Iterator operations
   cout << "Elements: ";
-  for (list<int>::iterator it = myList.begin(); it != myList.end(); ++it) {
-    cout << *it << " ";
+  for (list<int>::iterator iter = myList.begin(); iter != myList.end(); ++iter) {
+    cout << *iter << " ";
   }
   cout << "\n";
 
   // 5. Reverse iterator
   cout << "Reverse elements: ";
-  for (list<int>::reverse_iterator it = myList.rbegin(); it != myList.rend(); ++it) {
-    cout << *it << " ";
+  for (list<int>::reverse_iterator riter = myList.rbegin(); riter != myList.rend(); ++riter) {
+    cout << *riter << " ";
   }
   cout << "\n";
 
@@ -343,15 +343,15 @@ void examplesDeque() {
 
   // 4. Iterator operations
   cout << "Elements: ";
-  for (deque<int>::iterator it = dq.begin(); it != dq.end(); ++it) {
-    cout << *it << " ";
+  for (deque<int>::iterator iter = dq.begin(); iter != dq.end(); ++iter) {
+    cout << *iter << " ";
   }
   cout << "\n";
 
   // 5. Reverse iterator
   cout << "Reverse elements: ";
-  for (deque<int>::reverse_iterator it = dq.rbegin(); it != dq.rend(); ++it) {
-    cout << *it << " ";
+  for (deque<int>::reverse_iterator riter = dq.rbegin(); riter != dq.rend(); ++riter) {
+    cout << *riter << " ";
   }
   cout << "\n";
 
@@ -575,8 +575,8 @@ void examplesSet() {
   auto lower = mySet.lower_bound("cherry");
   auto upper = mySet.upper_bound("elderberry");
   cout << "Elements from cherry to elderberry: ";
-  for (auto it = lower; it != upper; ++it) {
-    cout << *it << " ";
+  for (auto iter = lower; iter != upper; ++iter) {
+    cout << *iter << " ";
   }
   cout << "\n";
 
@@ -774,7 +774,7 @@ void examplesMap() {
   // 7. Performance measurement
   clock_t start = clock();
   for (int i = 0; i < 100000; ++i) {
-    fruitMap[to_string(i)] = i;
+    (void)fruitMap[to_string(i)];  // Suppress unused value warning
   }
   clock_t end = clock();
   cout << "Time taken by map: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << "\n";
@@ -822,7 +822,7 @@ void examplesUnorderedMap() {
   // 7. Performance measurement
   clock_t start = clock();
   for (int i = 0; i < 100000; ++i) {
-    animalMap[to_string(i)] = i;
+    (void)animalMap[to_string(i)];  // Suppress unused value warning
   }
   clock_t end = clock();
   cout << "Time taken by unordered_map: " << double(end - start) / CLOCKS_PER_SEC << " seconds" << "\n";
@@ -904,14 +904,14 @@ void examplesMultimap() {
 
   start = clock();
   for (int i = 0; i < 100000; ++i) {
-    largeMap[i] = i;  // No duplicates
+    (void)largeMap[i];  // No duplicates - suppress unused value warning
   }
   end = clock();
   cout << "Time taken to insert 100,000 elements into map: "
        << double(end - start) / CLOCKS_PER_SEC << " seconds" << "\n";
 }
 
-int main() {
+auto main() -> int {
   // Pair
   examplesPair();
 
