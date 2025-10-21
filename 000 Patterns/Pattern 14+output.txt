@@ -1,0 +1,11 @@
+2
+
+4
+A
+AB
+ABC
+ABCD
+
+2
+A
+AB
