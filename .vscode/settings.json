@@ -1,0 +1,5 @@
+{
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && g++ --std=c++17 -fdiagnostics-color=always -g \"$fileName\" ../utils/utils.cpp -o \"$fileNameWithoutExt\" && $dir\"$fileNameWithoutExt\" < \"$fileNameWithoutExt+input.txt\" > \"$fileNameWithoutExt+output.txt\""
+    }
+}
