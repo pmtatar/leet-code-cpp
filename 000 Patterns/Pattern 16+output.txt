@@ -1,0 +1,11 @@
+2
+
+4
+A
+BB
+CCC
+DDDD
+
+2
+A
+BB
