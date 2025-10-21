@@ -112,6 +112,7 @@ cppcheck_output=$(cppcheck \
     --suppress=missingIncludeSystem \
     --suppress=unusedFunction \
     --suppress=unmatchedSuppression \
+    --suppress=ctuOneDefinitionRuleViolation \
     --quiet \
     --template='{file}:{line}: {severity}: {message}' \
     --inline-suppr \

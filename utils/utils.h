@@ -1,8 +1,8 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include <iostream>
 #include <functional>
+#include <iostream>
 #include <sstream>
 #include <vector>
 

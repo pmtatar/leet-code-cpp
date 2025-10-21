@@ -23,7 +23,7 @@ void readNLines(int n, const function<void(const string&)>& processLine) {
 vector<int> transformLineToIntVector(const string& line) {
   vector<int> v;
   stringstream ss(line);
-  int token =  -1;
+  int token = -1;
   while (ss >> token) {
     v.push_back(token);
   }
