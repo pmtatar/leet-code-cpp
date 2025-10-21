@@ -32,6 +32,7 @@ public:
 int main() {
   Solution s;
   int n = readInt();
+  cout << n << "\n";
   readNLines(n, [&s](const string& line) {
     // TODO: Read input from line and pass it to the solve method
     // s.solve(k);
