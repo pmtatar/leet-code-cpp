@@ -221,7 +221,7 @@ void examplesVector() {
 
   // 4. Iterator operations
   cout << "Elements: ";
-  for (vector<int>::iterator it = arr.begin(); it != arr.end(); ++it) {
+  for (vector<int>::iterator it = arr.begin(); it != arr.end(); ++it) {  // NOLINT(modernize-loop-convert)
     cout << *it << " ";
   }
   cout << "\n";
@@ -279,7 +279,7 @@ void examplesList() {
 
   // 4. Iterator operations
   cout << "Elements: ";
-  for (list<int>::iterator iter = myList.begin(); iter != myList.end(); ++iter) {
+  for (list<int>::iterator iter = myList.begin(); iter != myList.end(); ++iter) {  // NOLINT(modernize-loop-convert)
     cout << *iter << " ";
   }
   cout << "\n";
@@ -343,7 +343,7 @@ void examplesDeque() {
 
   // 4. Iterator operations
   cout << "Elements: ";
-  for (deque<int>::iterator iter = dq.begin(); iter != dq.end(); ++iter) {
+  for (deque<int>::iterator iter = dq.begin(); iter != dq.end(); ++iter) {  // NOLINT(modernize-loop-convert)
     cout << *iter << " ";
   }
   cout << "\n";
@@ -493,7 +493,7 @@ void examplesPriorityQueue() {
   cout << "\n";
 
   // 5. Min heap example
-  priority_queue<int, vector<int>, greater<int>> minPQ;
+  priority_queue<int, vector<int>, greater<>> minPQ;
   minPQ.push(3);
   minPQ.push(1);
   minPQ.push(4);
@@ -521,9 +521,9 @@ void examplesPriorityQueue() {
   };
 
   priority_queue<Task, vector<Task>, CompareTask> taskPQ;
-  taskPQ.push(Task(2, "Medium priority task"));
-  taskPQ.push(Task(1, "Low priority task"));
-  taskPQ.push(Task(3, "High priority task"));
+  taskPQ.push(Task(2, "Medium priority task"));  // NOLINT(modernize-use-emplace)
+  taskPQ.push(Task(1, "Low priority task"));     // NOLINT(modernize-use-emplace)
+  taskPQ.push(Task(3, "High priority task"));    // NOLINT(modernize-use-emplace)
 
   cout << "Processing tasks by priority:" << "\n";
   while (!taskPQ.empty()) {
@@ -581,7 +581,7 @@ void examplesSet() {
   cout << "\n";
 
   // 7. Custom comparator (reverse order)
-  set<string, greater<string>> reverseSet(mySet.begin(), mySet.end());
+  set<string, greater<>> reverseSet(mySet.begin(), mySet.end());
   cout << "Elements in reverse order: ";
   for (const string& fruit : reverseSet) {
     cout << fruit << " ";
@@ -764,7 +764,7 @@ void examplesMap() {
   cout << "\n";
 
   // 6. Using map with custom comparator
-  map<string, int, greater<string>> reverseMap(fruitMap.begin(), fruitMap.end());
+  map<string, int, greater<>> reverseMap(fruitMap.begin(), fruitMap.end());
   cout << "Map with reverse order: ";
   for (const auto& pair : reverseMap) {
     cout << pair.first << ":" << pair.second << " ";
@@ -880,7 +880,7 @@ void examplesMultimap() {
   }
 
   // 9. Using custom comparator (reverse order)
-  multimap<string, int, greater<string>> reverseScores;
+  multimap<string, int, greater<>> reverseScores;
   for (const auto& entry : studentScores) {
     reverseScores.insert(entry);
   }
@@ -911,43 +911,54 @@ void examplesMultimap() {
        << double(end - start) / CLOCKS_PER_SEC << " seconds" << "\n";
 }
 
-auto main() -> int {
-  // Pair
-  examplesPair();
+int main() {
+  try {
+    // Pair
+    examplesPair();
 
-  // Vector
-  examplesVector();
+    // Vector
+    examplesVector();
 
-  // List
-  examplesList();
+    // List
+    examplesList();
 
-  // Deque
-  examplesDeque();
+    // Deque
+    examplesDeque();
 
-  // Stack
-  examplesStack();
+    // Stack
+    examplesStack();
 
-  // Queue
-  examplesQueue();
+    // Queue
+    examplesQueue();
 
-  // Priority Queue
-  examplesPriorityQueue();
+    // Priority Queue
+    examplesPriorityQueue();
 
-  // Set
-  examplesSet();
+    // Set
+    examplesSet();
 
-  // Multiset
-  examplesMultiset();
+    // Multiset
+    examplesMultiset();
 
-  // Unordered Set
-  examplesUnorderedSet();
+    // Unordered Set
+    examplesUnorderedSet();
 
-  // Map
-  examplesMap();
+    // Map
+    examplesMap();
 
-  // Unordered Map
-  examplesUnorderedMap();
+    // Unordered Map
+    examplesUnorderedMap();
 
-  // Multimap
-  examplesMultimap();
+    // Multimap
+    examplesMultimap();
+
+    return 0;
+
+  } catch (exception& e) {
+    cout << "Error: " << e.what() << "\n";
+    return 1;
+  } catch (...) {
+    cout << "Unknown error" << "\n";
+    return 1;
+  }
 }

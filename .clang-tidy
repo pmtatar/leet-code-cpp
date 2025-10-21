@@ -10,6 +10,7 @@ Checks: "
   -misc-no-recursion,
   -google-build-using-namespace,
   -modernize-use-auto,
+  -modernize-use-trailing-return-type,
   -cppcoreguidelines-owning-memory,
   -cppcoreguidelines-avoid-magic-numbers"
 
