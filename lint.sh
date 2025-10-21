@@ -72,9 +72,25 @@ echo "=================================="
 clang_tidy_issues=0
 clang_tidy_output=""
 
-# Run clang-tidy on all files at once for better performance
-echo "Analyzing $cpp_count files..."
-clang_tidy_output=$(find . -name "*.cpp" -exec clang-tidy {} -- -std=c++17 -stdlib=libc++ \; 2>/dev/null | grep -E "(warning|error):" | head -20)
+# Detect number of CPU cores for parallel processing
+num_cores=$(sysctl -n hw.ncpu 2>/dev/null || echo "4")
+echo "Analyzing $cpp_count files in parallel (using $num_cores cores)..."
+
+# Create a temporary file for collecting output
+temp_output=$(mktemp)
+
+# Run clang-tidy in parallel using xargs
+# -P sets the number of parallel processes
+# -I {} replaces {} with the input
+find . -name "*.cpp" -print0 | \
+    xargs -0 -P "$num_cores" -I {} \
+    sh -c 'clang-tidy "{}" -- -std=c++17 -stdlib=libc++ 2>/dev/null' >> "$temp_output"
+
+# Filter and display results
+clang_tidy_output=$(grep -E "(warning|error):" "$temp_output" | head -20)
+
+# Clean up temp file
+rm -f "$temp_output"
 
 if [ -n "$clang_tidy_output" ]; then
     echo "$clang_tidy_output"
@@ -99,7 +115,7 @@ cppcheck_output=$(cppcheck \
     --quiet \
     --template='{file}:{line}: {severity}: {message}' \
     --inline-suppr \
-    . 2>&1)
+    . 2>&1 | grep -v "^nofile:0: information:" | grep -v ": information: ")
 
 if [ -n "$cppcheck_output" ]; then
     echo "$cppcheck_output"
