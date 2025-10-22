@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <ctime>
 #include <deque>
 #include <functional>
@@ -286,8 +285,8 @@ void examplesList() {
 
   // 5. Reverse iterator
   cout << "Reverse elements: ";
-  for (list<int>::reverse_iterator riter = myList.rbegin(); riter != myList.rend(); ++riter) {
-    cout << *riter << " ";
+  for (list<int>::reverse_iterator rIter = myList.rbegin(); rIter != myList.rend(); ++rIter) {
+    cout << *rIter << " ";
   }
   cout << "\n";
 
@@ -350,8 +349,8 @@ void examplesDeque() {
 
   // 5. Reverse iterator
   cout << "Reverse elements: ";
-  for (deque<int>::reverse_iterator riter = dq.rbegin(); riter != dq.rend(); ++riter) {
-    cout << *riter << " ";
+  for (deque<int>::reverse_iterator rIter = dq.rbegin(); rIter != dq.rend(); ++rIter) {
+    cout << *rIter << " ";
   }
   cout << "\n";
 
