@@ -1,0 +1,9 @@
+2
+
+   A
+  ABA
+ ABCBA
+ABCDCBA
+
+ A
+ABA

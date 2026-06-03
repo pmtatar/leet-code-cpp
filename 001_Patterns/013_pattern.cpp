@@ -6,10 +6,14 @@ using namespace std;
 
 class Solution {
 public:
-  void pattern1(int n) {
-    for (int i = n; i > 0; --i) {
-      for (int j = n; j > 0; --j) {
-        cout << "*";
+  void pattern13(int n) {
+    int currCount = 0;
+    for (int i = 0; i < n; ++i) {
+      for (int j = 0; j <= i; ++j) {
+        cout << (++currCount);
+        if (j != i) {
+          cout << " ";
+        }
       }
       cout << "\n";
     }
@@ -22,7 +26,7 @@ int main() {
   cout << n << "\n";
   readNLines(n, [&s](const string& line) {
     cout << "\n";
-    s.pattern1(stoi(line));
+    s.pattern13(stoi(line));
   });
   return 0;
 }
