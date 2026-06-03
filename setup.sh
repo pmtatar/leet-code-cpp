@@ -1,21 +1,32 @@
 #!/bin/bash
+# -----------------------------------------------------------------------------
+# Script Name: setup.sh
+# Description: Create a starter C++ file and empty input/output files for DSA practice
+#
+# Usage: ./setup.sh <FILE_NAME_WITHOUT_EXT>
+# Example: ./setup.sh "002_pattern"
+# -----------------------------------------------------------------------------
 
-# Check if filename argument is provided
-if [ -z "$1" ]; then
-    echo "Usage: ./setup.sh <fileName>"
-    echo "Example: ./setup.sh 'Pattern 04'"
-    exit 1
-fi
+echo "🚀 Running: $0"
 
-fileName="$1"
+# -----------------------------------------------------------------------------
+# 1. Read & validate required arguments
+# -----------------------------------------------------------------------------
 
-# Create the three files
-touch "${fileName}.cpp"
-touch "${fileName}+input.txt"
-touch "${fileName}+output.txt"
+FILE_NAME_WITHOUT_EXT="${1:?"❌ Error: FILE_NAME_WITHOUT_EXT is required"}"
 
-# Add a template to the .cpp file
-cat > "${fileName}.cpp" << 'EOF'
+# -----------------------------------------------------------------------------
+# 2. Create empty input/output files
+# -----------------------------------------------------------------------------
+
+touch "${FILE_NAME_WITHOUT_EXT}+input.txt"
+touch "${FILE_NAME_WITHOUT_EXT}+output.txt"
+
+# -----------------------------------------------------------------------------
+# 3. Write C++ template
+# -----------------------------------------------------------------------------
+
+cat > "${FILE_NAME_WITHOUT_EXT}.cpp" << 'EOF'
 #include <iostream>
 
 #include "utils.h"
@@ -41,6 +52,7 @@ int main() {
 }
 EOF
 
-echo "✓ Created ${fileName}.cpp"
-echo "✓ Created ${fileName}+input.txt"
-echo "✓ Created ${fileName}+output.txt"
+echo "✓ Created ${FILE_NAME_WITHOUT_EXT}.cpp"
+echo "✓ Created ${FILE_NAME_WITHOUT_EXT}+input.txt"
+echo "✓ Created ${FILE_NAME_WITHOUT_EXT}+output.txt"
+echo "✅ Done"

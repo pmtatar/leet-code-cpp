@@ -1,5 +1,5 @@
 {
     "code-runner.executorMap": {
-        "cpp": "cd $dir && g++ --std=c++17 -I\"$workspaceRoot/utils\" \"$workspaceRoot/utils/\"*.cpp \"$fileName\" -o \"$fileNameWithoutExt.out\" && ./\"$fileNameWithoutExt.out\" < \"$fileNameWithoutExt+input.txt\" > \"$fileNameWithoutExt+output.txt\""
+        "cpp": "./run_cpp.sh \"$workspaceRoot\" $dir \"$fileNameWithoutExt\""
     }
 }
