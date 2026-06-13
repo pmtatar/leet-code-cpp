@@ -1,0 +1,13 @@
+3
+
+GCD: 2
+GCD_iterative: 2
+GCD_extended: 2 = 4 * -1 + 6 * 1
+
+GCD: 1
+GCD_iterative: 1
+GCD_extended: 1 = 9 * 1 + 8 * -1
+
+GCD: 6
+GCD_iterative: 6
+GCD_extended: 6 = 6 * 1 + 12 * 0
