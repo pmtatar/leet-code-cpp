@@ -27,6 +27,15 @@ touch "${FILE_NAME_WITHOUT_EXT}+output.txt"
 # -----------------------------------------------------------------------------
 
 cat > "${FILE_NAME_WITHOUT_EXT}.cpp" << 'EOF'
+/**
+Problem:
+Link:
+
+Description:
+
+Example:
+*/
+
 #include <iostream>
 
 #include "utils.h"

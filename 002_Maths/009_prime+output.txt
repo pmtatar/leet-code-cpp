@@ -1,0 +1,10 @@
+3
+
+Brute Force: 1
+Optimized: (6k ± 1): 1
+
+Brute Force: 0
+Optimized: (6k ± 1): 0
+
+Brute Force: 0
+Optimized: (6k ± 1): 0

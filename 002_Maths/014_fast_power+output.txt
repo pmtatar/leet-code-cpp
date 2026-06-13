@@ -1,0 +1,10 @@
+3
+
+Power: 1024
+Fast Power: 1024
+
+Power: 81
+Fast Power: 81
+
+Power: 125
+Fast Power: 125

@@ -1,0 +1,10 @@
+3
+
+Brute Force: 3
+Sieve: 3
+
+Brute Force: 4
+Sieve: 4
+
+Brute Force: 8
+Sieve: 8
