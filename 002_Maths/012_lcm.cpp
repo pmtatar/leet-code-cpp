@@ -3,9 +3,11 @@ Problem: Least Common Multiple
 Link: https://takeuforward.org/plus/dsa/problems/lcm-of-two-numbers?subject=dsa
 
 Description:
-You are given two integers n1 and n2. You need find the Lowest Common Multiple (LCM) of the two given numbers. Return the LCM of the two numbers.
+You are given two integers n1 and n2. You need find the Lowest Common Multiple
+(LCM) of the two given numbers. Return the LCM of the two numbers.
 
-The Lowest Common Multiple (LCM) of two integers is the lowest positive integer that is divisible by both the integers.
+The Lowest Common Multiple (LCM) of two integers is the lowest positive integer
+that is divisible by both the integers.
 
 Example 1
 Input: n1 = 4, n2 = 6
@@ -28,11 +30,11 @@ using namespace std;
 
 class Solution {
 public:
-  int LCM(int n1,int n2) {
+  int LCM(int n1, int n2) {
     return (n1 * n2) / GCD(n1, n2);
   }
 
-  int GCD(int n1,int n2) {
+  int GCD(int n1, int n2) {
     while (n2 > 0) {
       n1 = n1 % n2;
       swap(n1, n2);
@@ -40,7 +42,7 @@ public:
     return n1;
   }
 
-  int LCM2(int n1,int n2) {
+  int LCM2(int n1, int n2) {
     int n_min = min(n1, n2);
     int n_max = max(n1, n2);
     int lcm = n_min;

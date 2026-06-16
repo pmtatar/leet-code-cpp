@@ -1,9 +1,11 @@
 /**
 Problem: Count Odd Digits
-Link: https://takeuforward.org/plus/dsa/problems/count-number-of-odd-digits-in-a-number?subject=dsa
+Link:
+https://takeuforward.org/plus/dsa/problems/count-number-of-odd-digits-in-a-number?subject=dsa
 
 Description:
-You are given an integer n. You need to return the number of odd digits present in the number.
+You are given an integer n. You need to return the number of odd digits present
+in the number.
 
 The number will have no leading zeroes, except when the number is 0 itself.
 
@@ -26,16 +28,16 @@ using namespace std;
 
 class Solution {
 public:
-    int countOddDigit(int n) {
-      int count = 0;
-      do {
-        if (n % 2 != 0) {
-          ++count;
-        }
-        n /= 10;
-      } while (n > 0);
-      return count;
-    }
+  int countOddDigit(int n) {
+    int count = 0;
+    do {
+      if (n % 2 != 0) {
+        ++count;
+      }
+      n /= 10;
+    } while (n > 0);
+    return count;
+  }
 };
 
 int main() {

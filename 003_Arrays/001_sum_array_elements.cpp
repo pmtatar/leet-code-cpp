@@ -1,9 +1,11 @@
 /**
 Problem: Sum of Array Elements
-Link: https://takeuforward.org/plus/dsa/problems/sum-of-array-elements?subject=dsa
+Link:
+https://takeuforward.org/plus/dsa/problems/sum-of-array-elements?subject=dsa
 
 Description:
-Given an array arr of size n, the task is to find the sum of all the elements in the array.
+Given an array arr of size n, the task is to find the sum of all the elements in
+the array.
 
 Example 1
 Input: n=5, arr = [1,2,3,4,5]
@@ -16,12 +18,12 @@ Output: 11
 Explanation: Sum of all the elements is 1+2+1+1+5+1 = 11
 */
 
-#include <iostream>
 #include "utils.h"
+#include <iostream>
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
   int sum(int arr[], int n) {
     int sum = 0;

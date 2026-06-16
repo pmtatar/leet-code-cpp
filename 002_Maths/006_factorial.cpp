@@ -1,10 +1,12 @@
 /**
 Problem: Factorial
-Link: https://takeuforward.org/plus/dsa/problems/factorial-of-a-given-number-i?subject=dsa
+Link:
+https://takeuforward.org/plus/dsa/problems/factorial-of-a-given-number-i?subject=dsa
 
 Description:
 You are given an integer n. Return the value of n! or n factorial.
-Factorial of a number is the product of all positive integers less than or equal to that number.
+Factorial of a number is the product of all positive integers less than or equal
+to that number.
 
 Example 1
 Input: n = 2

@@ -3,9 +3,11 @@ Problem: Palindrome Number
 Link: https://takeuforward.org/plus/dsa/problems/palindrome-number?subject=dsa
 
 Description:
-You are given an integer n. You need to check whether the number is a palindrome number or not. Return true if it's a palindrome number, otherwise return false.
+You are given an integer n. You need to check whether the number is a palindrome
+number or not. Return true if it's a palindrome number, otherwise return false.
 
-A palindrome number is a number which reads the same both left to right and right to left.
+A palindrome number is a number which reads the same both left to right and
+right to left.
 
 Example 1
 Input: n = 121

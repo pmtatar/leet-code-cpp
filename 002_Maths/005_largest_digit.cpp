@@ -1,6 +1,7 @@
 /**
 Problem: Largest Digit
-Link: https://takeuforward.org/plus/dsa/problems/return-the-largest-digit-in-a-number?subject=dsa
+Link:
+https://takeuforward.org/plus/dsa/problems/return-the-largest-digit-in-a-number?subject=dsa
 
 Description:
 You are given an integer n. Return the largest digit present in the number.

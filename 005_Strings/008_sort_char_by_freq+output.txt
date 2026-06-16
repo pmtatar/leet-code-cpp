@@ -1,0 +1,10 @@
+3
+Brute Force: ['e', 'r', 't']
+Optimized:   ['e', 'r', 't']
+Optimized 2: ['e', 'r', 't']
+Brute Force: ['a', 'j', 'r']
+Optimized:   ['a', 'j', 'r']
+Optimized 2: ['a', 'j', 'r']
+Brute Force: ['a', 'b', 'c', 'd']
+Optimized:   ['a', 'b', 'c', 'd']
+Optimized 2: ['a', 'b', 'c', 'd']

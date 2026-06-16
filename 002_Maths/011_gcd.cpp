@@ -3,9 +3,11 @@ Problem: Greatest Common Divisor
 Link: https://takeuforward.org/plus/dsa/problems/gcd-of-two-numbers?subject=dsa
 
 Description:
-You are given two integers n1 and n2. You need find the Greatest Common Divisor (GCD) of the two given numbers. Return the GCD of the two numbers.
+You are given two integers n1 and n2. You need find the Greatest Common Divisor
+(GCD) of the two given numbers. Return the GCD of the two numbers.
 
-The Greatest Common Divisor (GCD) of two integers is the largest positive integer that divides both of the integers.
+The Greatest Common Divisor (GCD) of two integers is the largest positive
+integer that divides both of the integers.
 
 Example 1
 Input: n1 = 4, n2 = 6
@@ -30,14 +32,14 @@ using namespace std;
 
 class Solution {
 public:
-  int GCD(int n1,int n2) {
+  int GCD(int n1, int n2) {
     if (n2 == 0) {
       return n1;
     }
     return GCD(n2, n1 % n2);
   }
 
-  int GCD_iterative(int n1,int n2) {
+  int GCD_iterative(int n1, int n2) {
     int gcd = n1;
     while (n2 > 0) {
       gcd = n2;
@@ -49,7 +51,9 @@ public:
 
   /*
   Extended Euclidean Algorithm
-  Given two integers n1 and n2, find the greatest common divisor (gcd) of n1 and n2, and also find the coefficients x and y such that n1 * x + n2 * y = gcd(n1, n2).
+  Given two integers n1 and n2, find the greatest common divisor (gcd) of n1 and
+  n2, and also find the coefficients x and y such that n1 * x + n2 * y = gcd(n1,
+  n2).
 
   Example:
   n1 = 12, n2 = 18

@@ -1,10 +1,12 @@
 /**
 Problem: Prime Number
-Link: https://takeuforward.org/plus/dsa/problems/check-for-prime-number?subject=dsa&tab=submissions
+Link:
+https://takeuforward.org/plus/dsa/problems/check-for-prime-number?subject=dsa&tab=submissions
 
 Description:
-You are given an integer n. You need to check if the number is prime or not. Return true if it is a prime number, otherwise return false.
-A prime number is a number which has no divisors except 1 and itself.
+You are given an integer n. You need to check if the number is prime or not.
+Return true if it is a prime number, otherwise return false. A prime number is a
+number which has no divisors except 1 and itself.
 
 Example 1
 Input: n = 5
@@ -17,8 +19,8 @@ Output: false
 Explanation: The divisors of 8 are 1, 2, 4, 8, thus it is not a prime number.
 */
 
-#include <iostream>
 #include "utils.h"
+#include <iostream>
 
 using namespace std;
 
@@ -49,14 +51,16 @@ public:
     }
 
     /*
-    We check for factors of the form 6k ± 1, i.e., 5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37, etc.
-    This is because any prime number greater than 3 can be written in the form 6k ± 1.
-    We skip even numbers and multiples of 3 because they are not prime.
+    We check for factors of the form 6k ± 1, i.e., 5, 7, 11, 13, 17, 19, 23, 25,
+    29, 31, 35, 37, etc. This is because any prime number greater than 3 can be
+    written in the form 6k ± 1. We skip even numbers and multiples of 3 because
+    they are not prime.
     */
     for (int i = 5; i * i <= n; i += 6) {
       /*
-      Here i = 5 is 6k - 1 while the i + 2 is 6k + 1. After adding 6 to both, we get 6(k + 1) - 1 and 6(k + 1) + 1
-      which are the next two numbers in the form 6k ± 1.
+      Here i = 5 is 6k - 1 while the i + 2 is 6k + 1. After adding 6 to both, we
+      get 6(k + 1) - 1 and 6(k + 1) + 1 which are the next two numbers in the
+      form 6k ± 1.
       */
       if (n % i == 0 || n % (i + 2) == 0) {
         return false;

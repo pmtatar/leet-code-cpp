@@ -1,0 +1,5 @@
+4
+["ab", "ba"]
+["ab", "ab"]
+["aa", "aa"]
+["abcaa", "abcbb"]

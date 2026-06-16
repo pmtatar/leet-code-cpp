@@ -4,11 +4,11 @@
 
 using namespace std;
 
-class Solution{
-  public:
-    char lastChar(string& s) {
-      return s.back();
-    }
+class Solution {
+public:
+  char lastChar(string& s) {
+    return s.back();
+  }
 };
 
 int main() {

@@ -20,8 +20,8 @@ Output: 125
 Explanation: 5^3 = 125
 */
 
-#include <iostream>
 #include "utils.h"
+#include <iostream>
 
 using namespace std;
 

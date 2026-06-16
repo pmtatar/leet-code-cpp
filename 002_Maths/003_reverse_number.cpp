@@ -3,7 +3,8 @@ Problem: Reverse Number
 Link: https://takeuforward.org/plus/dsa/problems/reverse-a-number?subject=dsa
 
 Description:
-You are given an integer n. Return the integer formed by placing the digits of n in reverse order.
+You are given an integer n. Return the integer formed by placing the digits of n
+in reverse order.
 
 Example:
 

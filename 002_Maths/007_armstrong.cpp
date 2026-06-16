@@ -1,11 +1,14 @@
 /**
 Problem: Armstrong
-Link: https://takeuforward.org/plus/dsa/problems/check-if-the-number-if-armstrong?subject=dsa
+Link:
+https://takeuforward.org/plus/dsa/problems/check-if-the-number-if-armstrong?subject=dsa
 
 Description:
-You are given an integer n. You need to check whether it is an armstrong number or not. Return true if it is an armstrong number, otherwise return false.
+You are given an integer n. You need to check whether it is an armstrong number
+or not. Return true if it is an armstrong number, otherwise return false.
 
-An armstrong number is a number which is equal to the sum of the digits of the number, raised to the power of the number of digits.
+An armstrong number is a number which is equal to the sum of the digits of the
+number, raised to the power of the number of digits.
 
 Example 1
 Input: n = 153
@@ -22,9 +25,9 @@ Explanation: Number of digits : 2.
 Therefore, it is not an Armstrong number.
 */
 
-#include <iostream>
-#include <cmath>
 #include "utils.h"
+#include <cmath>
+#include <iostream>
 
 using namespace std;
 

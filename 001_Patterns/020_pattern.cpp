@@ -8,9 +8,7 @@ class Solution {
 public:
   void pattern20(int n) {
     for (int i = 0; i < 2 * n - 1; ++i) {
-      int starCount = (i >= n)
-        ? (2 * n - i - 1)
-        : (i + 1);
+      int starCount = (i >= n) ? (2 * n - i - 1) : (i + 1);
       printStars(starCount);
       printSpaces(2 * (n - starCount));
       printStars(starCount);

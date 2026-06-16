@@ -1,10 +1,13 @@
 /**
 Problem: Perfect Number
-Link: https://takeuforward.org/plus/dsa/problems/check-for-perfect-number?subject=dsa
+Link:
+https://takeuforward.org/plus/dsa/problems/check-for-perfect-number?subject=dsa
 
 Description:
-You are given an integer n. You need to check if the number is a perfect number or not. Return true if it is a perfect number, otherwise, return false.
-A perfect number is a number whose proper divisors (excluding the number itself) add up to the number itself.
+You are given an integer n. You need to check if the number is a perfect number
+or not. Return true if it is a perfect number, otherwise, return false. A
+perfect number is a number whose proper divisors (excluding the number itself)
+add up to the number itself.
 
 Example 1
 Input: n = 6

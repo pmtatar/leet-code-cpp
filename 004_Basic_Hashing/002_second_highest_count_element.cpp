@@ -1,11 +1,13 @@
 /**
 Problem: Second Highest Occurring Element
-Link: https://takeuforward.org/plus/dsa/problems/second-highest-occurring-element?subject=dsa
+Link:
+https://takeuforward.org/plus/dsa/problems/second-highest-occurring-element?subject=dsa
 
 Description:
 Given an array of n integers, find the second most frequent element in it.
 
-If there are multiple elements that appear second most frequent times, find the smallest of them.
+If there are multiple elements that appear second most frequent times, find the
+smallest of them.
 
 If second most frequent element does not exist return -1.
 
@@ -13,7 +15,8 @@ Example 1
 Input: arr = [1, 2, 2, 3, 3, 3]
 Output: 2
 Explanation:
-The number 2 appears the second most (2 times) and number 3 appears the most(3 times).
+The number 2 appears the second most (2 times) and number 3 appears the most(3
+times).
 
 Example 2
 Input: arr = [4, 4, 5, 5, 6, 7]
@@ -30,13 +33,15 @@ Both 6 and 7 appear second most times, but 6 is smaller.
 using namespace std;
 
 class Solution {
-struct Record {
-  int num;
-  int count;
+  struct Record {
+    int num;
+    int count;
 
-  Record(int num, int count) : num(num), count(count) {}
-  Record(const pair<const int, int>& p) : num(p.first), count(p.second) {}
-};
+    Record(int num, int count) : num(num), count(count) {
+    }
+    Record(const pair<const int, int>& p) : num(p.first), count(p.second) {
+    }
+  };
 
 public:
   int secondMostFrequentElement(vector<int>& nums) {

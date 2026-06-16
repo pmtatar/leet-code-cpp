@@ -1,9 +1,11 @@
 /**
 Problem: Divisors of a Number
-Link: https://takeuforward.org/plus/dsa/problems/divisors-of-a-number?subject=dsa
+Link:
+https://takeuforward.org/plus/dsa/problems/divisors-of-a-number?subject=dsa
 
 Description:
-You are given an integer n. You need to find all the divisors of n. Return all the divisors of n as an array or list in a sorted order.
+You are given an integer n. You need to find all the divisors of n. Return all
+the divisors of n as an array or list in a sorted order.
 
 A number which completely divides another number is called it's divisor.
 

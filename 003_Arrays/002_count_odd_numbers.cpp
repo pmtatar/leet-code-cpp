@@ -1,9 +1,11 @@
 /**
 Problem: Count of Odd Numbers in an Array
-Link: https://takeuforward.org/plus/dsa/problems/count-of-odd-numbers-in-array?subject=dsa
+Link:
+https://takeuforward.org/plus/dsa/problems/count-of-odd-numbers-in-array?subject=dsa
 
 Description:
-Given an array of n elements. The task is to return the count of the number of odd numbers in the array.
+Given an array of n elements. The task is to return the count of the number of
+odd numbers in the array.
 
 Example 1
 Input: n=5, array = [1,2,3,4,5]
@@ -22,7 +24,7 @@ Explanation: The five odd elements are one 5 and four 1's.
 
 using namespace std;
 
-class Solution{
+class Solution {
 public:
   int countOdd(int arr[], int n) {
     int count = 0;
