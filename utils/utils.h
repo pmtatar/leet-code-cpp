@@ -34,9 +34,14 @@ vector<int> transformLineToIntVector(const string& line);
 /**
  * Transform a line of text into a vector of characters.
  *
+ * If the line looks like a JSON-style array of quoted single-character strings,
+ * each quoted segment becomes one char (same parsing as transformLineToStringVector).
  * Example:
- * Input: "hello"
+ * Input: "[\"h\", \"e\", \"l\", \"l\", \"o\"]"
  * Output: vector<char> with items ['h', 'e', 'l', 'l', 'o']
+ *
+ * Otherwise (no [...] array), every character in the line is stored in order
+ * (legacy behaviour for a plain string with no brackets).
  */
 vector<char> transformLineToCharVector(const string& line);
 

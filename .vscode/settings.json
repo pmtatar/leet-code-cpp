@@ -1,5 +1,5 @@
 {
     "code-runner.executorMap": {
-        "cpp": "./run_cpp.sh \"$workspaceRoot\" $dir \"$fileNameWithoutExt\""
+        "cpp": "./run_cpp.sh \"$workspaceRoot\" $dir \"$fileNameWithoutExt\" && ./format_cpp.sh $dir$fileName"
     }
 }

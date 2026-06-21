@@ -30,14 +30,6 @@ vector<int> transformLineToIntVector(const string& line) {
   return v;
 }
 
-vector<char> transformLineToCharVector(const string& line) {
-  vector<char> v;
-  for (char c : line) {
-    v.push_back(c);
-  }
-  return v;
-}
-
 vector<string> transformLineToStringVector(const string& line) {
   vector<string> parsed_items;
   string_view line_view = line;
@@ -75,6 +67,27 @@ vector<string> transformLineToStringVector(const string& line) {
   }
 
   return parsed_items;
+}
+
+vector<char> transformLineToCharVector(const string& line) {
+  size_t start_bracket = line.find('[');
+  size_t end_bracket = line.rfind(']');
+  if (start_bracket != string::npos && end_bracket != string::npos && start_bracket < end_bracket) {
+    vector<string> parts = transformLineToStringVector(line);
+    vector<char> v;
+    v.reserve(parts.size());
+    for (const string& s : parts) {
+      if (s.size() == 1) {
+        v.push_back(s[0]);
+      }
+    }
+    return v;
+  }
+  vector<char> v;
+  for (char c : line) {
+    v.push_back(c);
+  }
+  return v;
 }
 
 void printCharVector(const vector<char>& v) {

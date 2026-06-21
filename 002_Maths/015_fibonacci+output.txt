@@ -1,0 +1,13 @@
+3
+
+Iterative:      1
+Recursive:      1
+Tail Recursion: 1
+
+Iterative:      2
+Recursive:      2
+Tail Recursion: 2
+
+Iterative:      8
+Recursive:      8
+Tail Recursion: 8
