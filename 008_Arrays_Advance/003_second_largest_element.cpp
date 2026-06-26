@@ -31,6 +31,15 @@ public:
   int secondLargestElement(vector<int>& nums) {
     int largest = nums[0];
     int secondLargest = INT_MIN;
+    for (int i = 0; i < nums.size(); ++i) {
+      if (nums[i] > largest) {
+        secondLargest = largest;
+        largest = nums[i];
+      } else if (nums[i] != largest && nums[i] > secondLargest) {
+        secondLargest = nums[i];
+      }
+    }
+    return secondLargest == INT_MIN ? -1 : secondLargest;
   }
 };
 
