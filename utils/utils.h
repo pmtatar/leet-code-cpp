@@ -26,7 +26,7 @@ void readNLines(int n, const function<void(const string&)>& processLine);
  * Transform a line of text into a vector of integers.
  *
  * Example:
- * Input: "1 2 3 4 5"
+ * Input: "[1, 2, 3, 4, 5]"
  * Output: vector<int> with items [1, 2, 3, 4, 5]
  */
 vector<int> transformLineToIntVector(const string& line);

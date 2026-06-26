@@ -22,10 +22,20 @@ void readNLines(int n, const function<void(const string&)>& processLine) {
 
 vector<int> transformLineToIntVector(const string& line) {
   vector<int> v;
-  stringstream ss(line);
-  int token = -1;
-  while (ss >> token) {
-    v.push_back(token);
+  size_t start_bracket = line.find('[');
+  size_t end_bracket = line.rfind(']');
+  if (start_bracket == string::npos || end_bracket == string::npos || start_bracket >= end_bracket) {
+    return v;
+  }
+  string content = line.substr(start_bracket + 1, end_bracket - start_bracket - 1);
+  stringstream ss(content);
+  int num;
+  char comma;
+  while (ss >> num) {
+    v.push_back(num);
+    if (ss.peek() == ',') {
+      ss >> comma;
+    }
   }
   return v;
 }
