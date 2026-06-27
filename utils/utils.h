@@ -23,6 +23,16 @@ int readInt();
 void readNLines(int n, const function<void(const string&)>& processLine);
 
 /**
+ * Split a line into substrings at each occurrence of the delimiter.
+ * Leading and trailing whitespace is trimmed from each part.
+ *
+ * Example:
+ * Input: "[1, 2, 3, 4, 5]; [1, 2, 7]", ';'
+ * Output: vector<string> with items ["[1, 2, 3, 4, 5]", "[1, 2, 7]"]
+ */
+vector<string> splitLine(const string& line, char delimiter);
+
+/**
  * Transform a line of text into a vector of integers.
  *
  * Example:

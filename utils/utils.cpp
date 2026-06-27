@@ -20,6 +20,21 @@ void readNLines(int n, const function<void(const string&)>& processLine) {
   }
 }
 
+vector<string> splitLine(const string& line, char delimiter) {
+  vector<string> parts;
+  stringstream ss(line);
+  string part;
+  while (getline(ss, part, delimiter)) {
+    size_t start = part.find_first_not_of(" \t");
+    if (start == string::npos) {
+      continue;
+    }
+    size_t end = part.find_last_not_of(" \t");
+    parts.push_back(part.substr(start, end - start + 1));
+  }
+  return parts;
+}
+
 vector<int> transformLineToIntVector(const string& line) {
   vector<int> v;
   size_t start_bracket = line.find('[');
