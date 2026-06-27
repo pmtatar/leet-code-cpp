@@ -58,7 +58,6 @@ public:
 int main() {
   Solution s;
   int n = readInt();
-  cout << n << "\n";
   readNLines(n, [&s](const string& line) {
     vector<int> nums = transformLineToIntVector(line);
     cout << s.LCM(nums[0], nums[1]) << "\n";

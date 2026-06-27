@@ -42,7 +42,6 @@ public:
 int main() {
   Solution s;
   int n = readInt();
-  cout << n << "\n";
   readNLines(n, [&s](const string& line) {
     vector<char> v = transformLineToCharVector(line);
     s.reverseString(v);

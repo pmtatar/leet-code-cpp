@@ -51,7 +51,6 @@ public:
 int main() {
   Solution s;
   int n = readInt();
-  cout << n << "\n";
   readNLines(n, [&s](const string& line) {
     cout << s.isPerfect(stoi(line)) << "\n";
   });

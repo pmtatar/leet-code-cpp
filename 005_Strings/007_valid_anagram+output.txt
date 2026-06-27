@@ -1,4 +1,3 @@
-3
 
 Brute Force: 1
 Optimized: 1

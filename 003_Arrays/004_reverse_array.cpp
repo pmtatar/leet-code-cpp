@@ -37,7 +37,6 @@ public:
 int main() {
   Solution s;
   int n = readInt();
-  cout << n << "\n";
   readNLines(n, [&s](const string& line) {
     vector<int> v = transformLineToIntVector(line);
     s.reverse(v.data(), v.size());

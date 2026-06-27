@@ -65,7 +65,6 @@ public:
 int main() {
   Solution s;
   int n = readInt();
-  cout << n << "\n";
   readNLines(n, [&s](const string& line) {
     vector<string> v = transformLineToStringVector(line);
     cout << s.buddyStrings(v[0], v[1]) << "\n";

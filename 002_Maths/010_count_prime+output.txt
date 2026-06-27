@@ -1,4 +1,3 @@
-3
 
 Brute Force: 3
 Sieve: 3

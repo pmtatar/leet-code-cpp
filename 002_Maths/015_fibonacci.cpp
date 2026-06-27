@@ -59,7 +59,6 @@ public:
 int main() {
   Solution s;
   int n = readInt();
-  cout << n << "\n";
   readNLines(n, [&s](const string& line) {
     cout << "\n";
     cout << "Iterative:      " << s.fib(stoi(line)) << "\n";

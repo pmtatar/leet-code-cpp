@@ -44,7 +44,6 @@ public:
 int main() {
   Solution s;
   int n = readInt();
-  cout << n << "\n";
   readNLines(n, [&s](const string& line) {
     vector<int> v = transformLineToIntVector(line);
     printIntVector(s.bubbleSort(v));

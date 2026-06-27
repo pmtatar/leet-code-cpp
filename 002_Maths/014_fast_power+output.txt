@@ -1,4 +1,3 @@
-3
 
 Power: 1024
 Fast Power: 1024

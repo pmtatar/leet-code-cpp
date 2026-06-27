@@ -1,4 +1,3 @@
-3
 
 GCD: 2
 GCD_iterative: 2

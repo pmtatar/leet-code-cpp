@@ -50,7 +50,6 @@ private:
 int main() {
   Solution s;
   int n = readInt();
-  cout << n << "\n";
   readNLines(n, [&s](const string& line) {
     int num = stoi(line);
     cout << s.checkPrime(num) << "\n";

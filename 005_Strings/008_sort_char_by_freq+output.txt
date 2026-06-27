@@ -1,4 +1,3 @@
-3
 Brute Force: ['e', 'r', 't']
 Optimized:   ['e', 'r', 't']
 Optimized 2: ['e', 'r', 't']
