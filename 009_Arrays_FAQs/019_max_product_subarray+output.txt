@@ -1,0 +1,9 @@
+Easy Solution: 840
+Kadane's Solution: 840
+
+Easy Solution: 0
+Kadane's Solution: 0
+
+Easy Solution: 144
+Kadane's Solution: 144
+

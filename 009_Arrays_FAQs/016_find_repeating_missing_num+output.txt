@@ -1,0 +1,12 @@
+Brute Force: [1, 2]
+Using n-sum: [1, 2]
+Using XOR  : [1, 2]
+
+Brute Force: [7, 4]
+Using n-sum: [7, 4]
+Using XOR  : [7, 4]
+
+Brute Force: [6, 9]
+Using n-sum: [6, 9]
+Using XOR  : [6, 9]
+

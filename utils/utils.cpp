@@ -20,6 +20,21 @@ void readNLines(int n, const function<void(const string&)>& processLine) {
   }
 }
 
+vector<string> splitLine(const string& line, char delimiter) {
+  vector<string> parts;
+  stringstream ss(line);
+  string part;
+  while (getline(ss, part, delimiter)) {
+    size_t start = part.find_first_not_of(" \t");
+    if (start == string::npos) {
+      continue;
+    }
+    size_t end = part.find_last_not_of(" \t");
+    parts.push_back(part.substr(start, end - start + 1));
+  }
+  return parts;
+}
+
 vector<int> transformLineToIntVector(const string& line) {
   vector<int> v;
   size_t start_bracket = line.find('[');
@@ -30,14 +45,34 @@ vector<int> transformLineToIntVector(const string& line) {
   string content = line.substr(start_bracket + 1, end_bracket - start_bracket - 1);
   stringstream ss(content);
   int num;
-  char comma;
   while (ss >> num) {
     v.push_back(num);
-    if (ss.peek() == ',') {
-      ss >> comma;
+    while (ss.good() && (ss.peek() == ',' || ss.peek() == ' ' || ss.peek() == '\t')) {
+      ss.ignore(1);
     }
   }
   return v;
+}
+
+vector<vector<int>> transformLineTo2DIntMatrix(const string& line) {
+  vector<vector<int>> matrix;
+  size_t pos = 0;
+  if (!line.empty() && line[0] == '[') {
+    pos = 1;
+  }
+  while (pos < line.size()) {
+    size_t start = line.find('[', pos);
+    if (start == string::npos) {
+      break;
+    }
+    size_t end = line.find(']', start);
+    if (end == string::npos) {
+      break;
+    }
+    matrix.push_back(transformLineToIntVector(line.substr(start, end - start + 1)));
+    pos = end + 1;
+  }
+  return matrix;
 }
 
 vector<string> transformLineToStringVector(const string& line) {
@@ -122,6 +157,12 @@ void printIntVector(const vector<int>& v) {
   }
   cout << "]";
   cout << "\n";
+}
+
+void print2DIntVector(const vector<vector<int>>& matrix) {
+  for (const vector<int>& row : matrix) {
+    printIntVector(row);
+  }
 }
 
 void printStringVector(const vector<string>& v) {

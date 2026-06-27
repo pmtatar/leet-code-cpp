@@ -23,6 +23,16 @@ int readInt();
 void readNLines(int n, const function<void(const string&)>& processLine);
 
 /**
+ * Split a line into substrings at each occurrence of the delimiter.
+ * Leading and trailing whitespace is trimmed from each part.
+ *
+ * Example:
+ * Input: "[1, 2, 3, 4, 5]; [1, 2, 7]", ';'
+ * Output: vector<string> with items ["[1, 2, 3, 4, 5]", "[1, 2, 7]"]
+ */
+vector<string> splitLine(const string& line, char delimiter);
+
+/**
  * Transform a line of text into a vector of integers.
  *
  * Example:
@@ -30,6 +40,15 @@ void readNLines(int n, const function<void(const string&)>& processLine);
  * Output: vector<int> with items [1, 2, 3, 4, 5]
  */
 vector<int> transformLineToIntVector(const string& line);
+
+/**
+ * Transform a line of text into a 2D matrix of integers.
+ *
+ * Example:
+ * Input: "[[1, 2, 3], [4, 5, 6], [7, 8, 9]]"
+ * Output: vector<vector<int>> with rows [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+ */
+vector<vector<int>> transformLineTo2DIntMatrix(const string& line);
 
 /**
  * Transform a line of text into a vector of characters.
@@ -67,6 +86,17 @@ void printCharVector(const vector<char>& v);
  * Example: [1, 2, 3, 4, 5]
  */
 void printIntVector(const vector<int>& v);
+
+/**
+ * Print a 2D matrix of integers, one row per line.
+ *
+ * Example:
+ * [[1, 2, 3], [4, 5, 6], [7, 8, 9]] prints as:
+ * [1, 2, 3]
+ * [4, 5, 6]
+ * [7, 8, 9]
+ */
+void print2DIntVector(const vector<vector<int>>& matrix);
 
 /**
  * Print a vector of strings.

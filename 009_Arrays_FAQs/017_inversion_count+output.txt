@@ -1,0 +1,9 @@
+Using Brute Force: 5
+Using Merge Sort: 5
+
+Using Brute Force: 0
+Using Merge Sort: 0
+
+Using Brute Force: 6
+Using Merge Sort: 6
+

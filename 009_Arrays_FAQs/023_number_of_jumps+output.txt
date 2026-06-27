@@ -1,0 +1,6 @@
+Brute Force: 5
+Optimized: 5
+
+Brute Force: 3
+Optimized: 3
+

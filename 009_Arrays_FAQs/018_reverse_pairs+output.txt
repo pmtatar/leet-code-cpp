@@ -1,0 +1,12 @@
+Brute Force: 3
+Merge Sort: 3
+
+Brute Force: 0
+Merge Sort: 0
+
+Brute Force: 2
+Merge Sort: 2
+
+Brute Force: 0
+Merge Sort: 0
+
