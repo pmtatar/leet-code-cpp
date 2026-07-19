@@ -1,0 +1,6 @@
+Brute Force: 4; Using Map: 4
+
+Brute Force: 0; Using Map: 0
+
+Brute Force: 3; Using Map: 3
+

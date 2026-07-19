@@ -1,0 +1,3 @@
+2
+["race", "care", "acre", "bake", "beak", "keep"]
+["bob", "obb", "boo", "oob", "bbo"]
